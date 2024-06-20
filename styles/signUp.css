@@ -1,0 +1,44 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: hsl(0, 0%, 0%);
+} */
+.signup-form {
+  color: white;
+  width: 700px;
+  margin: auto;
+  border: 1px solid hsla(0, 0%, 100%, 0.342);
+  height: 100vh;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.flex-container {
+  display: flex;
+  width: 500px;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: auto;
+}
+.name {
+  flex: 1;
+}
+.username {
+  flex: 1;
+}
+.email {
+  flex: 2;
+}
+.password {
+  flex: 2;
+}
+label {
+  margin-bottom: 2px;
+}
+input {
+  color: white;
+  line-height: 2;
+  border: 0.2px solid hsla(0, 0%, 100%, 0.558);
+}
