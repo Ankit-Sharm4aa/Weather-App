@@ -1,7 +1,14 @@
 import React from "react";
-// import Styles from "../styles/weatherApp.css"
+import "./weatherApp.css";
+import Sidebar from "@/components/sidebar";
+import CurrentWeather from "@/components/current-weather";
 function WeatherApp() {
-  return <div>weatherApp</div>;
+  return (
+    <>
+      <Sidebar />
+      {/* <CurrentWeather /> */}
+    </>
+  );
 }
 
 export default WeatherApp;

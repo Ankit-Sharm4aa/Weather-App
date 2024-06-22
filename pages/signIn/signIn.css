@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+h1 {
+  text-align: center;
+  color: yellow;
+  font-weight: normal;
+  margin: 20px 0;
+}
+.weather-image {
+  height: 728px;
+  width: 728px;
+  opacity: 0.5;
+}
+.signin-icon {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 70px;
+}
+label {
+  font-weight: bold;
+}
+.signin-button {
+  display: flex;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+  color: yellow;
+}
+p,
+a {
+  margin-top: 20px;
+  text-align: center;
+}

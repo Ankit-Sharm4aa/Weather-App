@@ -26,16 +26,16 @@ function SignUp() {
           variant="elevation"
           elevation={5}
           sx={{
-            height: "500px",
-            width: "400px",
-            bgcolor: "hsl(240, 58%, 6%);",
+            height: "550px",
+            width: "500px",
+            bgcolor: "hsl(240, 58%, 6%)",
             color: "white",
             padding: 2,
             margin: "auto",
             border: "1px solid hsla(60, 41%, 89%, 0.59);",
           }}
         >
-          <Grid container gap={2} style={{ padding: "40px" }}>
+          <Grid container gap={4} style={{ padding: "40px" }}>
             <Grid item lg={12} md={12} sm={12} xs={12}>
               <label htmlFor="name">Name</label>
               <br />
@@ -43,7 +43,11 @@ function SignUp() {
                 name="name"
                 variant="outlined"
                 size="small"
-                style={{ border: "1px solid yellow", borderRadius: "4px" }}
+                sx={{
+                  border: "2px solid yellow",
+                  borderRadius: "4px",
+                  input: { color: "white" },
+                }}
                 fullWidth
                 type="text"
               />
@@ -55,7 +59,11 @@ function SignUp() {
                 name="user-name"
                 variant="outlined"
                 size="small"
-                style={{ border: "1px solid yellow", borderRadius: "4px" }}
+                sx={{
+                  border: "2px solid yellow",
+                  borderRadius: "4px",
+                  input: { color: "white" },
+                }}
                 fullWidth
                 type="text"
               />
@@ -67,10 +75,13 @@ function SignUp() {
                 name="user-email"
                 variant="outlined"
                 size="small"
-                style={{ border: "1px solid yellow", borderRadius: "4px" }}
+                sx={{
+                  border: "2px solid yellow",
+                  borderRadius: "4px",
+                  input: { color: "white" },
+                }}
                 fullWidth
                 type="Email"
-                placeholder="Email"
               />
             </Grid>
             <Grid item lg={12} md={12} sm={12} xs={12}>
@@ -80,9 +91,10 @@ function SignUp() {
                 name="password"
                 variant="outlined"
                 size="small"
-                style={{
-                  border: "1px solid yellow",
+                sx={{
+                  border: "2px solid yellow",
                   borderRadius: "4px",
+                  input: { color: "white" },
                 }}
                 fullWidth
                 type="password"
