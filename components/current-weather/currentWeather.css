@@ -3,3 +3,22 @@
   justify-content: end;
   margin: 10px 10px;
 }
+p {
+  color: white;
+}
+.current-temp {
+  font-size: 40px;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.temp-caption {
+  display: flex;
+  color: white;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.current-weather-img {
+  height: 70px;
+  width: 70px;
+}
