@@ -1,6 +1,158 @@
-span {
+* {
   color: white;
+  margin: 0;
+  padding: 0;
+}
+.highlights-heading {
+  color: black;
+}
+.highlights-container {
+  height: 330px;
+  width: 700px;
+  background-color: grey;
+}
+.highlights-wind {
+  background-color: rgba(0, 0, 0, 0.836);
+  height: 180px;
+  width: 180px;
+}
+.wind-time-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.windspeed {
+  display: flex;
+  gap: 2px;
+  font-size: 26px;
+}
+.wind-unit {
   font-size: 10px;
+  margin-top: 15px;
+}
+.wind-time {
+  margin-top: 7px;
+}
+.highlights-uv {
+  background-color: rgba(0, 0, 0, 0.836);
+  height: 180px;
+  width: 180px;
+}
+.uv-unit-container {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.uv-value {
+  font-size: 26px;
+}
+.uv-unit {
+  font-size: 10px;
+  margin-top: 15px;
+}
+.highlights-sun {
+  background-color: rgba(0, 0, 0, 0.836);
+  height: 180px;
+  width: 180px;
+}
+.sun-time-container,
+.sunrise-time-container,
+.sunset-time-container {
+  display: flex;
+}
+.sunrise-time-container,
+.sunset-time-container {
+  gap: 2px;
+}
+.sun-time-container {
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.sunrise-time,
+.sunset-time {
+  font-size: 10px;
+}
+.time-unit {
+  font-size: 10px;
+}
+.highlights-humidity {
+  background-color: rgba(0, 0, 0, 0.836);
+  height: 50px;
+  width: 190px;
+  display: flex;
+  justify-content: space-between;
+}
+.humidity {
+  flex: 1;
+}
+.humidity-value {
+  font-size: 23px;
+}
+.humidity-percent {
+  font-size: 10px;
+}
+.humidity-info {
+  flex: 0.8;
+}
+.humidity-text {
+  font-size: 10px;
+}
+.highlights-visibility {
+  background-color: rgba(0, 0, 0, 0.836);
+  height: 50px;
+  width: 190px;
+  display: flex;
+  justify-content: space-between;
+}
+.visibility-value {
+  font-size: 23px;
+}
+.visibility-unit {
+  font-size: 10px;
+  margin-left: 5px;
+}
+.visibility {
+  flex: 1;
+}
+.visibility-info {
+  flex: 0.7;
+}
+.visibility-text {
+  font-size: 10px;
+}
+.highlights-feelslike {
+  background-color: rgba(0, 0, 0, 0.836);
+  height: 50px;
+  width: 190px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.temperature-info {
+  font-size: 10px;
+  margin-top: 20px;
+  flex: 0.8;
+}
+.temperature {
+  display: flex;
+  flex: 1;
+}
+.temperature-value {
+  font-size: 23px;
+  margin-top: -6px;
+}
+.highlights-wind,
+.highlights-uv,
+.highlights-sun {
   padding: 10px;
   font-weight: bold;
+  border-radius: 10px;
+}
+.highlights-humidity,
+.highlights-visibility,
+.highlights-feelslike {
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 10px;
 }

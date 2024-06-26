@@ -1,7 +1,14 @@
 import React from "react";
+import { Card } from "@mui/material";
+import "./map.css";
 
 function Map() {
-  return <h4>Weather condition map</h4>;
+  return (
+    <>
+      <div className="map-heading">Weather Condition Map</div>
+      <Card className="map"></Card>
+    </>
+  );
 }
 
 export default Map;
