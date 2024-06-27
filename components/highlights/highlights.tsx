@@ -11,9 +11,9 @@ import "./highlights.css";
 function Highlights() {
   return (
     <>
-      <h4 className="highlights-heading">Today's Highlight</h4>
       <Paper className="highlights-container" variant="elevation" elevation={4}>
-        <Grid container gap={3} sx={{ padding: "20px" }}>
+        <h5 className="highlights-heading">Today's Highlights</h5>
+        <Grid container gap={2} sx={{ marginLeft: "10px" }}>
           <Grid item>
             <Card className="highlights-wind">
               <h5 className="wind-heading">Wind Status</h5>

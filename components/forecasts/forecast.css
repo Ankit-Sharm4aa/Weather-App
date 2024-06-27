@@ -1,7 +1,10 @@
+.forecast-heading {
+  margin-bottom: 25px;
+}
 .card-main {
   height: 300px;
   width: 300px;
-  background-color: black;
+  background-color: grey;
   border-radius: 15px;
   overflow: hidden;
   position: relative;

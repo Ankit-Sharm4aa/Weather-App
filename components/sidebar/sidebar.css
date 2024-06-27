@@ -1,15 +1,20 @@
-.weather-text {
-  font-size: 0.7em;
-  position: absolute;
-  left: 10px;
-  color: white;
-}
 .sidebar-main {
   width: 100%;
-  max-width: 50px;
-  border-radius: 10px;
-  background-color: black;
+  max-width: 65px;
+  border-radius: 15px;
+  background-color: grey;
+  color: white;
 }
-.bottom-sidebar {
-  margin-top: 70px;
+.sidebar-top-container {
+  display: flex;
+  justify-content: center;
+}
+.weather-text {
+  font-size: 10px;
+}
+.sidebar-divider {
+  background-color: white;
+}
+.sidebar-bottom {
+  margin-top: 130px;
 }

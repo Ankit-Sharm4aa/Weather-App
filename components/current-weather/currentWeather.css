@@ -1,16 +1,30 @@
+.currentWeather-container {
+  height: 330px;
+  width: 300px;
+  border-radius: 15px;
+  background-color: grey;
+  padding-left: 10px;
+}
 .search-icon {
   display: flex;
   justify-content: end;
   margin: 10px 10px;
 }
-p {
-  color: white;
+.current-weather-img {
+  height: 70px;
+  width: 70px;
 }
 .current-temp {
   font-size: 40px;
   color: white;
   margin-bottom: 10px;
   font-weight: bold;
+  position: relative;
+}
+.currentTemp-unit {
+  font-size: 30px;
+  position: absolute;
+  margin-top: 8px;
 }
 .temp-caption {
   display: flex;
@@ -18,7 +32,32 @@ p {
   gap: 10px;
   margin-bottom: 20px;
 }
-.current-weather-img {
-  height: 70px;
-  width: 70px;
+.caption-text {
+  font-size: 12px;
+  margin-top: 3px;
+}
+.locationTime-container {
+  margin-top: 20px;
+}
+.currentLocation-container {
+  display: flex;
+  gap: 10px;
+}
+.current-location {
+  font-size: 12px;
+  margin-top: 2px;
+}
+.currentDateTime-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.timeDate-container {
+  display: flex;
+  gap: 5px;
+  margin-top: 3px;
+}
+.time-current,
+.date-current {
+  font-size: 12px;
 }

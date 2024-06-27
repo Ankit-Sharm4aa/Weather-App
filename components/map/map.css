@@ -1,9 +1,10 @@
 .map-heading {
   font-weight: bold;
-  margin: 10px;
+  margin-bottom: 25px;
 }
 .map {
-  height: 330px;
-  width: 700px;
-  background-color: black;
+  height: 300px;
+  width: 680px;
+  border-radius: 15px;
+  background-color: grey;
 }

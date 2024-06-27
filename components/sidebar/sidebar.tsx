@@ -8,6 +8,7 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import CircleNotificationsIcon from "@mui/icons-material/CircleNotifications";
+import CrisisAlertOutlinedIcon from "@mui/icons-material/CrisisAlertOutlined";
 import Avatar from "@mui/material/Avatar";
 import profilePic from "./images/alex-suprun-ZHvM3XIOHoE-unsplash.jpg";
 import Stack from "@mui/material/Stack";
@@ -17,12 +18,16 @@ import "./sidebar.css";
 function Sidebar() {
   return (
     <Paper variant="elevation" elevation={4} className="sidebar-main">
-      <Stack spacing={4}>
-        <IconButton>
-          <AcUnitIcon fontSize="small" sx={{ color: "aqua" }} />
-        </IconButton>
-        <p className="weather-text">Weather</p>
-        <Divider flexItem variant="middle" sx={{ backgroundColor: "white" }} />
+      <Stack gap={3}>
+        <div className="sidebar-top-container">
+          <div className="sidebar-top">
+            <IconButton>
+              <AcUnitIcon fontSize="small" sx={{ color: "aqua" }} />
+            </IconButton>
+            <p className="weather-text">Weather</p>
+          </div>
+        </div>
+        <Divider flexItem variant="middle" className="sidebar-divider" />
         <IconButton>
           <GridViewIcon fontSize="small" sx={{ color: "white" }} />
         </IconButton>
@@ -33,13 +38,16 @@ function Sidebar() {
           <LocationOnOutlinedIcon fontSize="small" sx={{ color: "white" }} />
         </IconButton>
         <IconButton>
+          <CrisisAlertOutlinedIcon fontSize="small" sx={{ color: "white" }} />
+        </IconButton>
+        <IconButton>
           <CalendarMonthOutlinedIcon fontSize="small" sx={{ color: "white" }} />
         </IconButton>
         <IconButton>
           <SettingsOutlinedIcon fontSize="small" sx={{ color: "white" }} />
         </IconButton>
       </Stack>
-      <Stack className="bottom-sidebar">
+      <Stack className="sidebar-bottom">
         <IconButton>
           <CircleNotificationsIcon fontSize="small" sx={{ color: "white" }} />
         </IconButton>

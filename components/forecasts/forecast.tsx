@@ -1,8 +1,8 @@
 import React from "react";
 import { Card } from "@mui/material";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
+// import FormControl from "@mui/material/FormControl";
+// import Select from "@mui/material/Select";
+// import MenuItem from "@mui/material/MenuItem";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -17,8 +17,8 @@ import "./forecast.css";
 
 function Forecast() {
   return (
-    <>
-      <h4>7 days Forecast</h4>
+    <div className="forecast-container">
+      <h5 className="forecast-heading">7 days Forecast</h5>
       <Card className="card-main">
         <List className="forecast-list">
           <Stack>
@@ -148,22 +148,7 @@ function Forecast() {
           </Stack>
         </Card>
       </Card>
-      <FormControl
-        variant="outlined"
-        size="small"
-        className="forecast-dropdown"
-      >
-        <Select>
-          <MenuItem>7 day</MenuItem>
-          <MenuItem>6 day</MenuItem>
-          <MenuItem>5 day</MenuItem>
-          <MenuItem>4 day</MenuItem>
-          <MenuItem>3 day</MenuItem>
-          <MenuItem>2 day</MenuItem>
-          <MenuItem>1 day</MenuItem>
-        </Select>
-      </FormControl>
-    </>
+    </div>
   );
 }
 

@@ -1,20 +1,17 @@
-* {
-  color: white;
-  margin: 0;
-  padding: 0;
-}
-.highlights-heading {
-  color: black;
-}
 .highlights-container {
   height: 330px;
-  width: 700px;
+  width: 680px;
   background-color: grey;
+  padding: 10px;
+  border-radius: 15px;
+}
+.highlights-heading {
+  margin-bottom: 10px;
 }
 .highlights-wind {
   background-color: rgba(0, 0, 0, 0.836);
-  height: 180px;
-  width: 180px;
+  height: 200px;
+  width: 200px;
 }
 .wind-time-container {
   display: flex;
@@ -35,8 +32,8 @@
 }
 .highlights-uv {
   background-color: rgba(0, 0, 0, 0.836);
-  height: 180px;
-  width: 180px;
+  height: 200px;
+  width: 200px;
 }
 .uv-unit-container {
   display: flex;
@@ -53,8 +50,8 @@
 }
 .highlights-sun {
   background-color: rgba(0, 0, 0, 0.836);
-  height: 180px;
-  width: 180px;
+  height: 200px;
+  width: 200px;
 }
 .sun-time-container,
 .sunrise-time-container,
@@ -78,8 +75,8 @@
 }
 .highlights-humidity {
   background-color: rgba(0, 0, 0, 0.836);
-  height: 50px;
-  width: 190px;
+  height: 60px;
+  width: 200px;
   display: flex;
   justify-content: space-between;
 }
@@ -100,8 +97,8 @@
 }
 .highlights-visibility {
   background-color: rgba(0, 0, 0, 0.836);
-  height: 50px;
-  width: 190px;
+  height: 60px;
+  width: 200px;
   display: flex;
   justify-content: space-between;
 }
@@ -123,8 +120,8 @@
 }
 .highlights-feelslike {
   background-color: rgba(0, 0, 0, 0.836);
-  height: 50px;
-  width: 190px;
+  height: 60px;
+  width: 200px;
   display: flex;
   justify-content: space-between;
 }
