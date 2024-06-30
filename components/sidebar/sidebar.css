@@ -1,9 +1,10 @@
 .sidebar-main {
   width: 100%;
-  max-width: 65px;
+  max-width: 80px;
   border-radius: 15px;
-  background-color: grey;
+  background-color: hsla(240, 65%, 3%, 0.549);
   color: white;
+  border: 2px solid yellow;
 }
 .sidebar-top-container {
   display: flex;

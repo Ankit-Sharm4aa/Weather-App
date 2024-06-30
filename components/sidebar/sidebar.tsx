@@ -22,34 +22,37 @@ function Sidebar() {
         <div className="sidebar-top-container">
           <div className="sidebar-top">
             <IconButton>
-              <AcUnitIcon fontSize="small" sx={{ color: "aqua" }} />
+              <AcUnitIcon fontSize="medium" sx={{ color: "aqua" }} />
             </IconButton>
             <p className="weather-text">Weather</p>
           </div>
         </div>
         <Divider flexItem variant="middle" className="sidebar-divider" />
         <IconButton>
-          <GridViewIcon fontSize="small" sx={{ color: "white" }} />
+          <GridViewIcon fontSize="medium" sx={{ color: "white" }} />
         </IconButton>
         <IconButton>
-          <MapIcon fontSize="small" sx={{ color: "white" }} />
+          <MapIcon fontSize="medium" sx={{ color: "white" }} />
         </IconButton>
         <IconButton>
-          <LocationOnOutlinedIcon fontSize="small" sx={{ color: "white" }} />
+          <LocationOnOutlinedIcon fontSize="medium" sx={{ color: "white" }} />
         </IconButton>
         <IconButton>
-          <CrisisAlertOutlinedIcon fontSize="small" sx={{ color: "white" }} />
+          <CrisisAlertOutlinedIcon fontSize="medium" sx={{ color: "white" }} />
         </IconButton>
         <IconButton>
-          <CalendarMonthOutlinedIcon fontSize="small" sx={{ color: "white" }} />
+          <CalendarMonthOutlinedIcon
+            fontSize="medium"
+            sx={{ color: "white" }}
+          />
         </IconButton>
         <IconButton>
-          <SettingsOutlinedIcon fontSize="small" sx={{ color: "white" }} />
+          <SettingsOutlinedIcon fontSize="medium" sx={{ color: "white" }} />
         </IconButton>
       </Stack>
       <Stack className="sidebar-bottom">
         <IconButton>
-          <CircleNotificationsIcon fontSize="small" sx={{ color: "white" }} />
+          <CircleNotificationsIcon fontSize="medium" sx={{ color: "white" }} />
         </IconButton>
         <IconButton>
           <Avatar src={profilePic.src} />

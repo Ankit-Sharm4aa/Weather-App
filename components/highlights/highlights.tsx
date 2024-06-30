@@ -3,6 +3,8 @@ import { Paper } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Stack from "@mui/material/Stack";
+import SparkLine from "@/components/sparkline-chart/";
+import GaugeChart from "@/components/gauge-chart";
 import DeviceThermostatOutlinedIcon from "@mui/icons-material/DeviceThermostatOutlined";
 import WaterDropOutlinedIcon from "@mui/icons-material/WaterDropOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
@@ -13,10 +15,11 @@ function Highlights() {
     <>
       <Paper className="highlights-container" variant="elevation" elevation={4}>
         <h5 className="highlights-heading">Today's Highlights</h5>
-        <Grid container gap={2} sx={{ marginLeft: "10px" }}>
+        <Grid container gap={2} sx={{ justifyContent: "center" }}>
           <Grid item>
             <Card className="highlights-wind">
               <h5 className="wind-heading">Wind Status</h5>
+              <SparkLine />
               <div className="wind-time-container">
                 <div className="windspeed">
                   7.90<div className="wind-unit">km/h</div>
@@ -28,6 +31,7 @@ function Highlights() {
           <Grid item>
             <Card className="highlights-uv">
               <h5 className="uv-heading">UV Index</h5>
+              <GaugeChart />
               <div className="uv-unit-container">
                 <div className="uv-value">5.50</div>
                 <div className="uv-unit">UV</div>

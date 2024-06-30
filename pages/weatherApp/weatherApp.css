@@ -1,3 +1,7 @@
+body,
+html {
+  height: 100%;
+}
 * {
   padding: 0;
   margin: 0;
@@ -6,17 +10,31 @@
 }
 .weather-app {
   padding: 20px;
-  width: 1120px;
-  margin: auto;
-  background-color: black;
+  position: absolute;
+  top: 1px;
+}
+.Bg-image {
+  background-image: url("./images/valentin-muller-bWtd1ZyEy6w-unsplash.jpg");
+  filter: blur(3px) brightness(50%);
+  -webkit-filter: blur(3px);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 .sidebar {
   position: absolute;
+  width: 80px;
 }
 .flex-container {
   position: relative;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  margin-left: 80px;
+  margin-left: 120px;
+}
+.Highlights,
+.Map {
+  margin-left: 20px;
 }

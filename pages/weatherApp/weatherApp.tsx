@@ -8,17 +8,28 @@ import Map from "@/components/map";
 
 function WeatherApp() {
   return (
-    <div className="weather-app">
-      <div className="sidebar">
-        <Sidebar />
+    <>
+      <div className="Bg-image"></div>
+      <div className="weather-app">
+        <div className="sidebar">
+          <Sidebar />
+        </div>
+        <div className="flex-container">
+          <div className="currentWeather">
+            <CurrentWeather />
+          </div>
+          <div className="Highlights">
+            <Highlights />
+          </div>
+          <div className="Forecast">
+            <Forecast />
+          </div>
+          <div className="Map">
+            <Map />
+          </div>
+        </div>
       </div>
-      <div className="flex-container">
-        <CurrentWeather />
-        <Highlights />
-        <Forecast />
-        <Map />
-      </div>
-    </div>
+    </>
   );
 }
 

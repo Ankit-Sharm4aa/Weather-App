@@ -4,7 +4,8 @@
 }
 .map {
   height: 300px;
-  width: 680px;
+  width: 860px;
   border-radius: 15px;
-  background-color: grey;
+  background-color: hsla(240, 65%, 3%, 0.549);
+  border: 2px solid yellow;
 }

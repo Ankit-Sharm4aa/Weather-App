@@ -1,15 +1,23 @@
 .currentWeather-container {
   height: 330px;
-  width: 300px;
+  width: 470px;
   border-radius: 15px;
-  background-color: grey;
-  padding-left: 10px;
+  padding: 20px;
+  border: 2px solid yellow;
+  background-color: hsla(240, 65%, 3%, 0.549);
 }
-.search-icon {
+.searchbar-container {
   display: flex;
   justify-content: end;
-  margin: 10px 10px;
 }
+.searchbar {
+  width: 180px;
+}
+.searchbar-input {
+  border-bottom: 2px solid white;
+  color: white;
+}
+
 .current-weather-img {
   height: 70px;
   width: 70px;
@@ -29,12 +37,12 @@
 .temp-caption {
   display: flex;
   color: white;
-  gap: 10px;
+  gap: 5px;
   margin-bottom: 20px;
 }
 .caption-text {
-  font-size: 12px;
-  margin-top: 3px;
+  font-size: 16px;
+  margin-top: 1px;
 }
 .locationTime-container {
   margin-top: 20px;
