@@ -1,10 +1,11 @@
+"use client";
 import React from "react";
-import { Paper } from "@mui/material";
+import { Paper, createTheme } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Stack from "@mui/material/Stack";
 import SparkLine from "@/components/sparkline-chart/";
-import GaugeChart from "@/components/gauge-chart";
+import { Gauge } from "@mui/x-charts/Gauge";
 import DeviceThermostatOutlinedIcon from "@mui/icons-material/DeviceThermostatOutlined";
 import WaterDropOutlinedIcon from "@mui/icons-material/WaterDropOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
@@ -31,7 +32,14 @@ function Highlights() {
           <Grid item>
             <Card className="highlights-uv">
               <h5 className="uv-heading">UV Index</h5>
-              <GaugeChart />
+              <Gauge
+                width={100}
+                height={100}
+                value={60}
+                startAngle={-90}
+                endAngle={90}
+                sx={{ backgroundColor: "white" }}
+              />
               <div className="uv-unit-container">
                 <div className="uv-value">5.50</div>
                 <div className="uv-unit">UV</div>

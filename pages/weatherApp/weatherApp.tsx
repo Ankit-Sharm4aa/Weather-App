@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import "./weatherApp.css";
 import Sidebar from "@/components/sidebar";
 import CurrentWeather from "@/components/current-weather";
 import Highlights from "@/components/highlights";
 import Forecast from "@/components/forecasts/";
 import Map from "@/components/map";
+import getWeatherData from "../../components/services/networking/weather-data";
 
-function WeatherApp() {
+type Props = {
+  city: string;
+};
+
+function WeatherApp({ city }: Props) {
+  console.log("hello");
+  const fetchData = useCallback(
+    async (city: string) => {
+      const weatherDataFromApi = await getWeatherData(city);
+      console.log(weatherDataFromApi);
+    },
+    [city]
+  );
+  console.log("hl11", fetchData);
+
+  useEffect(() => {
+    fetchData(city);
+  }, [city, fetchData]);
+
   return (
     <>
       <div className="Bg-image"></div>
