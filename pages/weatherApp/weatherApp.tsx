@@ -12,15 +12,14 @@ type Props = {
 };
 
 function WeatherApp({ city }: Props) {
-  console.log("hello");
+  //understand why useCallback useEffect and check how useState is used so tht we can fetch the data in this component
   const fetchData = useCallback(
     async (city: string) => {
       const weatherDataFromApi = await getWeatherData(city);
-      console.log(weatherDataFromApi);
+      console.log("use this data to update state using use state" , weatherDataFromApi);
     },
     [city]
   );
-  console.log("hl11", fetchData);
 
   useEffect(() => {
     fetchData(city);
