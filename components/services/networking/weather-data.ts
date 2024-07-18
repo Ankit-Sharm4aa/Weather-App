@@ -1,6 +1,8 @@
 import { WeatherApiResponse } from "@/components/types/weather/weather";
 
-export default async function getWeatherData(city: string) : Promise<WeatherApiResponse>{
+export default async function getWeatherData(
+  city: string
+): Promise<WeatherApiResponse> {
   // parameter must be defined with declaration of types
   // http {get,request}
 
@@ -12,5 +14,5 @@ export default async function getWeatherData(city: string) : Promise<WeatherApiR
   );
   const data = await response.json();
 
-  return {...data}
+  return { ...data };
 }

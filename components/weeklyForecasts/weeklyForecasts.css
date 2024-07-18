@@ -1,0 +1,34 @@
+.weeklyForecast-heading {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.weeklyForecast {
+  height: 300px;
+  width: 860px;
+  border-radius: 15px;
+  background-color: hsla(240, 65%, 3%, 0.549);
+  border: 2px solid yellow;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: scroll;
+}
+.weeklyForecast-list {
+  padding: 10px;
+  font-size: 15px;
+}
+.weeklyweather-forecasts {
+  margin-left: 20px;
+}
+.temp,
+.humid,
+.wind,
+.precipitation {
+  display: flex;
+}
+
+.temp-icon,
+.humid-icon,
+.wind-icon,
+.precipitation-icon {
+  margin-right: 5px;
+}

@@ -1,8 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: white;
+.signin {
+  background-color: black;
 }
 h1 {
   text-align: center;
@@ -10,9 +7,10 @@ h1 {
   font-weight: normal;
   margin: 20px 0;
 }
+
 .weather-image {
-  height: 728px;
-  width: 728px;
+  height: 727px;
+  width: 727px;
   opacity: 0.5;
 }
 .signin-icon {
@@ -23,6 +21,18 @@ h1 {
 }
 label {
   font-weight: bold;
+}
+.signIn-form {
+  height: 440px;
+  width: 400px;
+  background-color: hsl(240, 58%, 4%);
+  color: white;
+  padding: 35px;
+  margin: auto;
+  border: 1px solid hsla(60, 100%, 80%, 0.62);
+}
+.signInForm-container {
+  padding: 50px;
 }
 .signin-button {
   display: flex;

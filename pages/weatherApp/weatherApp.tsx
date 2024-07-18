@@ -3,9 +3,12 @@ import "./weatherApp.css";
 import Sidebar from "@/components/sidebar";
 import CurrentWeather from "@/components/current-weather";
 import Highlights from "@/components/highlights";
-import Forecast from "@/components/forecasts/";
-import Map from "@/components/map";
+import WeeklyForecasts from "@/components/weeklyForecasts";
+import DailyForecast from "@/components/dailyForecasts/dailyForecast";
 import getWeatherData from "../../components/services/networking/weather-data";
+import { WeatherApiResponse } from "@/components/types/weather/weather";
+import { ForecastApiResponse } from "@/components/types/weather/forecast";
+import { Visibility } from "@mui/icons-material";
 
 type Props = {
   city: string;
@@ -16,7 +19,8 @@ function WeatherApp({ city }: Props) {
   const fetchData = useCallback(
     async (city: string) => {
       const weatherDataFromApi = await getWeatherData(city);
-      console.log("use this data to update state using use state" , weatherDataFromApi);
+
+      setData(weatherDataFromApi);
     },
     [city]
   );
@@ -25,29 +29,50 @@ function WeatherApp({ city }: Props) {
     fetchData(city);
   }, [city, fetchData]);
 
+  const [data, setData] = useState<WeatherApiResponse>();
+
+  console.log(data, "hello1");
+
   return (
-    <>
+    <div className="weather-app">
       <div className="Bg-image"></div>
-      <div className="weather-app">
+      <div className="weather-app-container">
         <div className="sidebar">
           <Sidebar />
         </div>
         <div className="flex-container">
           <div className="currentWeather">
-            <CurrentWeather />
+            <CurrentWeather
+              dt={data?.dt}
+              weather={data?.weather}
+              main={data?.main}
+              city={city}
+              timezone={data?.timezone}
+            />
           </div>
           <div className="Highlights">
-            <Highlights />
+            <Highlights
+              main={data?.main}
+              sys={data?.sys}
+              wind={data?.wind}
+              vis={data?.visibility}
+              dt={data?.dt}
+              timezone={data?.timezone}
+            />
           </div>
-          <div className="Forecast">
-            <Forecast />
+          <div className="daily-forecasts">
+            <DailyForecast
+              lon={data?.coord.lon}
+              lat={data?.coord.lat}
+              dt={data?.dt}
+            />
           </div>
-          <div className="Map">
-            <Map />
+          <div className="weekly-forecasts">
+            <WeeklyForecasts />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

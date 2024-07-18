@@ -1,23 +1,19 @@
 body,
-html {
+html,
+.weather-app {
   height: 100%;
 }
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  color: white;
-}
-.weather-app {
+.weather-app-container {
   padding: 20px;
   position: absolute;
-  top: 1px;
+  top: 0px;
 }
 .Bg-image {
   background-image: url("./images/valentin-muller-bWtd1ZyEy6w-unsplash.jpg");
-  filter: blur(3px) brightness(50%);
-  -webkit-filter: blur(3px);
-  height: 100vh;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  -webkit-filter: brightness(30%);
+  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,6 +31,6 @@ html {
   margin-left: 120px;
 }
 .Highlights,
-.Map {
+.weekly-forecasts {
   margin-left: 20px;
 }

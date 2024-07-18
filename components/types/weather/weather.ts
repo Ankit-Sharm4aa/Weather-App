@@ -2,8 +2,8 @@ type coordDataDTO = {
   lon: number;
   lat: number;
 };
-type mainDTO = {
-  temp: number;
+export type mainDTO = {
+  temp: number | 0;
   feels_like: number;
   temp_min: number;
   temp_max: number;
@@ -12,11 +12,12 @@ type mainDTO = {
   sea_level: number;
   grnd_level: number;
 };
-type windDTO = {
+export type windDTO = {
   speed: number;
   deg: number;
+  gust: number;
 };
-type weatherDTO = {
+export type weatherDTO = {
   id: 804;
   main: "Clouds";
   description: "overcast clouds";
@@ -26,7 +27,7 @@ type cloudsDTO = {
   all: string;
 };
 
-type sysDTO = {
+export type sysDTO = {
   type: number;
   id: number;
   country: string;

@@ -6,6 +6,23 @@
   border: 2px solid yellow;
   background-color: hsla(240, 65%, 3%, 0.549);
 }
+.highlights-wind,
+.highlights-atmPressure,
+.highlights-sun {
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid rgba(233, 233, 3, 0.664);
+}
+.highlights-humidity,
+.highlights-visibility,
+.highlights-feelslike {
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid rgba(233, 233, 3, 0.664);
+}
+
 .highlights-heading {
   margin-bottom: 10px;
 }
@@ -14,38 +31,44 @@
   height: 180px;
   width: 260px;
 }
-.wind-time-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+.wind-heading {
+  margin-bottom: 20px;
 }
-.windspeed {
+.windspeed,
+.windgust {
   display: flex;
-  gap: 2px;
-  font-size: 26px;
+  gap: 8px;
+  font-size: 30px;
 }
-.wind-unit {
+.wind-unit,
+.wind-text {
   font-size: 10px;
-  margin-top: 15px;
+  margin-top: 4px;
 }
-.wind-time {
-  margin-top: 7px;
-}
-.highlights-uv {
+.highlights-atmPressure {
   background-color: rgba(0, 0, 0, 0.836);
   height: 180px;
   width: 260px;
 }
-.uv-unit-container {
+.atmPressure-chart {
+  display: flex;
+  justify-items: center;
+}
+.atmPressure-indicator {
+  display: flex;
+  gap: 40px;
+  margin-left: 60px;
+}
+.atmPressure-unit-container {
   display: flex;
   gap: 3px;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 5px;
 }
-.uv-value {
+.atmPressure-value {
   font-size: 26px;
 }
-.uv-unit {
+.atmPressure-unit {
   font-size: 10px;
   margin-top: 15px;
 }
@@ -63,9 +86,12 @@
 .sunset-time-container {
   gap: 2px;
 }
+.sun-Chart {
+  margin-top: 10px;
+}
 .sun-time-container {
+  padding: 0 40px;
   justify-content: space-between;
-  margin-top: 20px;
 }
 .sunrise-time,
 .sunset-time {
@@ -81,19 +107,10 @@
   display: flex;
   justify-content: space-between;
 }
-.humidity {
-  flex: 1;
-}
 .humidity-value {
   font-size: 23px;
 }
 .humidity-percent {
-  font-size: 10px;
-}
-.humidity-info {
-  flex: 0.8;
-}
-.humidity-text {
   font-size: 10px;
 }
 .highlights-visibility {
@@ -110,15 +127,6 @@
   font-size: 10px;
   margin-left: 5px;
 }
-.visibility {
-  flex: 1;
-}
-.visibility-info {
-  flex: 0.7;
-}
-.visibility-text {
-  font-size: 10px;
-}
 .highlights-feelslike {
   background-color: rgba(0, 0, 0, 0.836);
   height: 70px;
@@ -126,30 +134,7 @@
   display: flex;
   justify-content: space-between;
 }
-.temperature-info {
-  font-size: 10px;
-  margin-top: 20px;
-  flex: 0.8;
-}
-.temperature {
-  display: flex;
-  flex: 1;
-}
 .temperature-value {
   font-size: 23px;
   margin-top: -6px;
-}
-.highlights-wind,
-.highlights-uv,
-.highlights-sun {
-  padding: 10px;
-  font-weight: bold;
-  border-radius: 10px;
-}
-.highlights-humidity,
-.highlights-visibility,
-.highlights-feelslike {
-  padding: 8px;
-  font-weight: bold;
-  border-radius: 10px;
 }

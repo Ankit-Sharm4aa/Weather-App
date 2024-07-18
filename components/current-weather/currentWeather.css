@@ -64,8 +64,5 @@
   display: flex;
   gap: 5px;
   margin-top: 3px;
-}
-.time-current,
-.date-current {
   font-size: 12px;
 }
