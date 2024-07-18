@@ -62,7 +62,7 @@ function DailyForecast({ dt, lat, lon }: Props) {
                 <ListItem>
                   <ListItemIcon>
                     <img
-                      src={`https://openweathermap.org/img/${formatted_forecast_data[key]?.weather[key]?.weather_obj?.icon}.png`}
+                      src={`https://openweathermap.org/img/wn/${formatted_forecast_data[key]?.weather[key]?.weather_obj?.icon}.png`}
                       className="forecast1-weather-img"
                     ></img>
                   </ListItemIcon>

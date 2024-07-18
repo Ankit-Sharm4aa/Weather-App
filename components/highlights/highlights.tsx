@@ -65,7 +65,7 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
                   variant="middle"
                 />
                 <div className="windgust" style={{ display: "flex" }}>
-                  {Gust_Speed}
+                  {Gust_Speed ? Gust_Speed : "NA"}
                   <Stack className="wind-info" direction={"column"}>
                     <div className="wind-unit">KPH</div>
                     <div className="wind-text">Gust</div>
