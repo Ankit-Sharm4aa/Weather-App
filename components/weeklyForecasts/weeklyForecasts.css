@@ -24,6 +24,7 @@
 .wind,
 .precipitation {
   display: flex;
+  flex: 1;
 }
 
 .temp-icon,
@@ -31,4 +32,8 @@
 .wind-icon,
 .precipitation-icon {
   margin-right: 5px;
+}
+
+.precipitation-icon {
+  font-size: 22px;
 }

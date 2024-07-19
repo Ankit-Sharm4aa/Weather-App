@@ -10,7 +10,7 @@ import { sysDTO, WeatherApiResponse } from "../types/weather/weather";
 
 type Props = {
   sys: sysDTO;
-  dt: WeatherApiResponse;
+  dt: number;
 };
 
 function GaugePointer() {
@@ -40,8 +40,8 @@ function SunChart({ sys, dt }: Props) {
   const sunrise = sys?.sunrise;
   const sunset = sys?.sunset;
   const difference = sunset - sunrise;
-  const current_time = dt?.dt;
-  console.log("current_time", current_time / difference);
+  const current_time = dt - 216000;
+  console.log("current_time", current_time / difference, sunset);
   return (
     <GaugeContainer
       width={230}

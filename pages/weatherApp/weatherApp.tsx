@@ -68,7 +68,11 @@ function WeatherApp({ city }: Props) {
             />
           </div>
           <div className="weekly-forecasts">
-            <WeeklyForecasts />
+            <WeeklyForecasts
+              lon={data?.coord.lon}
+              lat={data?.coord.lat}
+              dt={data?.dt}
+            />
           </div>
         </div>
       </div>

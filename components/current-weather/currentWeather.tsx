@@ -4,14 +4,12 @@ import Divider from "@mui/material/Divider";
 import SearchIcon from "@mui/icons-material/Search";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
-import ThunderstormIcon from "@mui/icons-material/Thunderstorm";
 import Input from "@mui/material/Input";
 import FormControl from "@mui/material/FormControl";
 import InputAdornment from "@mui/material/InputAdornment";
 import "./currentWeather.css";
 import { weatherDTO, mainDTO } from "../types/weather/weather";
 import CircularProgress from "@mui/material/CircularProgress";
-import Moment from "react-moment";
 import "moment-timezone";
 
 type Props = {
@@ -51,7 +49,6 @@ function CurrentWeather({ city, main, dt, weather, timezone }: Props) {
             className="current-weather-img"
           ></img>
         )}
-
         <div className="current-temp">
           <span className="currentTemp-value">
             {temprature ? temprature : <CircularProgress />}
@@ -59,10 +56,7 @@ function CurrentWeather({ city, main, dt, weather, timezone }: Props) {
           <sup>o</sup>
           <span className="">C</span>
         </div>
-        <div className="temp-caption">
-          <ThunderstormIcon fontSize="small" />
-          <div className="caption-text">{weather_message}</div>
-        </div>
+        <div className="caption-text">{weather_message}</div>
         <Divider variant="middle" sx={{ backgroundColor: "white" }} />
         <div className="locationTime-container">
           <div className="currentLocation-container">

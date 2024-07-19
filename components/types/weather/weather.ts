@@ -43,7 +43,7 @@ export type WeatherApiResponse = {
   visibility: number;
   wind: windDTO;
   clouds: cloudsDTO;
-  dt: Date;
+  dt: number;
   sys: sysDTO;
   timezone: Date;
   name: string;
