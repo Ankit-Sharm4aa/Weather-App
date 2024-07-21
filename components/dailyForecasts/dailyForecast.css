@@ -1,12 +1,12 @@
 .forecast-heading {
-  margin-bottom: 20px;
+  margin-bottom: 1.2rem;
 }
 .card-main {
   height: 300px;
   width: 470px;
-  padding: 10px;
+  padding: 0.8rem;
   background-color: hsla(240, 65%, 3%, 0.549);
-  border-radius: 15px;
+  border-radius: 1rem;
   position: relative;
   border: 2px solid yellow;
   -ms-overflow-style: none;
@@ -15,16 +15,21 @@
 }
 
 .forecast1-weather-img {
-  height: 40px;
-  width: 40px;
+  height: 3rem;
+  width: 3rem;
 }
 .forecast-1 {
   display: flex;
   flex-direction: row;
-  font-size: 12px;
   gap: 220px;
 }
 .forecast-1 {
   color: white;
   font-size: 15px;
+}
+.forecast1-temp {
+  flex: 1;
+}
+.forecast1-date {
+  flex: 1;
 }

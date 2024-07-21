@@ -6,7 +6,7 @@ import {
   GaugeReferenceArc,
   useGaugeState,
 } from "@mui/x-charts/Gauge";
-import { sysDTO, WeatherApiResponse } from "../types/weather/weather";
+import { sysDTO } from "../types/weather/weather";
 
 type Props = {
   sys: sysDTO;
@@ -37,11 +37,12 @@ function GaugePointer() {
   );
 }
 function SunChart({ sys, dt }: Props) {
-  const sunrise = sys?.sunrise;
-  const sunset = sys?.sunset;
+  const sunrise = sys?.sunrise * 1000;
+  const sunset = sys?.sunset * 1000;
   const difference = sunset - sunrise;
-  const current_time = dt - 216000;
-  console.log("current_time", current_time / difference, sunset);
+  const hourly_difference = Math.floor(difference / 1000 / 60 / 60);
+  const time_elapsed = Math.floor((dt * 1000 - sunrise) / 1000 / 60 / 60);
+  console.log("current_time", time_elapsed, hourly_difference, sunset, sunrise);
   return (
     <GaugeContainer
       width={230}
@@ -49,8 +50,8 @@ function SunChart({ sys, dt }: Props) {
       startAngle={-110}
       endAngle={110}
       valueMin={0}
-      value={current_time / difference}
-      valueMax={difference}
+      value={time_elapsed}
+      valueMax={hourly_difference}
     >
       <GaugeReferenceArc />
       <GaugeValueArc />

@@ -21,7 +21,7 @@ type Props = {
   sys: sysDTO;
   wind: windDTO;
   vis: number;
-  dt: Date;
+  dt: number;
   timezone: number;
 };
 
@@ -29,19 +29,42 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
   const windDirection = 180;
   const Humidity = main?.humidity;
   const Feels_like = (main?.feels_like - 273).toFixed(2);
-  const Sunrise = new Date(sys?.sunrise).toUTCString();
   const Sunset = new Date(sys?.sunset).toUTCString();
   const Wind_Speed = wind?.speed;
   const Gust_Speed = wind?.gust;
   const Visibility = vis ? vis / 1000 : 0;
-  const highlights_date = dt?.valueOf() * 1000;
   const timezone1 = timezone * 1000;
-  const c = new Date(highlights_date).toLocaleString();
+  const sunrise: number = sys?.sunrise * 1000 + timezone1;
+  const sunset: number = sys?.sunset * 1000 + timezone1;
+  function formatTimestampToAMPM(timestamp: number): string {
+    let date: Date = new Date(timestamp);
+    function pad(number: number): string {
+      if (number < 10) {
+        return "0" + number;
+      }
+      return "" + number;
+    }
+
+    let year: number = date.getUTCFullYear();
+    let month: string = pad(date.getUTCMonth() + 1);
+    let day: string = pad(date.getUTCDate());
+
+    let hours: number = date.getUTCHours();
+    let minutes: string = pad(date.getUTCMinutes());
+    let seconds: string = pad(date.getUTCSeconds());
+
+    let period: string = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+
+    let formattedDateTime: string = `${hours}:${minutes} ${period}`;
+
+    return formattedDateTime;
+  }
+
+  const sunrise_time: string = formatTimestampToAMPM(sunrise);
+  const sunset_time: string = formatTimestampToAMPM(sunset);
   const Atm_Pressure = main?.pressure;
-  console.log("highlights_date", highlights_date);
-  console.log("timezone1", timezone1);
-  console.log("Gust_Speed", Gust_Speed);
-  console.log("c", c);
   return (
     <>
       <Paper className="highlights-container" variant="elevation" elevation={4}>
@@ -98,15 +121,11 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
               </div>
               <div className="sun-time-container">
                 <Stack className="sunrise-time-container">
-                  <div className="sunrise-time">
-                    <Moment date={Sunrise} format="hh:mm a"></Moment>
-                  </div>
+                  <div className="sunrise-time">{sunrise_time}</div>
                   <WiSunrise fontSize="35px" />
                 </Stack>
                 <Stack className="sunset-time-container">
-                  <div className="sunset-time">
-                    <Moment date={Sunset} format="hh:mm a"></Moment>
-                  </div>
+                  <div className="sunset-time">{sunset_time}</div>
                   <TbSunset2 fontSize="30px" />
                 </Stack>
               </div>

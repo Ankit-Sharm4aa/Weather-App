@@ -1,11 +1,11 @@
 .weeklyForecast-heading {
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 1.2rem;
 }
 .weeklyForecast {
   height: 300px;
   width: 860px;
-  border-radius: 15px;
+  border-radius: 1rem;
   background-color: hsla(240, 65%, 3%, 0.549);
   border: 2px solid yellow;
   -ms-overflow-style: none;
@@ -13,11 +13,11 @@
   overflow: scroll;
 }
 .weeklyForecast-list {
-  padding: 10px;
-  font-size: 15px;
+  padding: 0.9rem;
+  font-size: 1rem;
 }
 .weeklyweather-forecasts {
-  margin-left: 20px;
+  margin-left: 1.2rem;
 }
 .temp,
 .humid,
@@ -31,9 +31,9 @@
 .humid-icon,
 .wind-icon,
 .precipitation-icon {
-  margin-right: 5px;
+  margin-right: 0.2em;
 }
 
 .precipitation-icon {
-  font-size: 22px;
+  font-size: 1.3em;
 }

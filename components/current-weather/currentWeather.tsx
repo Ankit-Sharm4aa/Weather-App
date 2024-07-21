@@ -16,7 +16,7 @@ type Props = {
   dt: number | undefined;
   main: mainDTO;
   weather: weatherDTO[];
-  city: string | undefined;
+  city: string;
   timezone: number | undefined;
 };
 
@@ -26,6 +26,42 @@ function CurrentWeather({ city, main, dt, weather, timezone }: Props) {
   const date = dt ? dt * 1000 : 0;
   const timezone_value = timezone ? timezone * 1000 : 0;
   const current_date = new Date(date + timezone_value).toUTCString();
+  const location = city.split(",");
+  let timestamp: number = date + timezone_value;
+  let date1: Date = new Date(timestamp);
+
+  function pad(number: number): string {
+    if (number < 10) {
+      return "0" + number;
+    }
+    return "" + number;
+  }
+
+  let year: number = date1.getUTCFullYear();
+  let month: string = pad(date1.getUTCMonth() + 1);
+  let day: string = pad(date1.getUTCDate());
+  let day_value: number = date1.getDay();
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const dayname = days[day_value];
+  let hours: number = date1.getUTCHours();
+  let minutes: string = pad(date1.getUTCMinutes());
+  let seconds: string = pad(date1.getUTCSeconds());
+
+  let period: string = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+
+  let formattedDateTime: string = `${dayname.slice(0, 3)},${
+    " " + day
+  }-${month}-${year} ${hours}:${minutes}:${seconds} ${period}`;
 
   return (
     <>
@@ -61,11 +97,13 @@ function CurrentWeather({ city, main, dt, weather, timezone }: Props) {
         <div className="locationTime-container">
           <div className="currentLocation-container">
             <LocationOnOutlinedIcon fontSize="small" />
-            <div className="current-location">{city}</div>
+            <div className="current-location">
+              {location[0] + "," + location[1].toUpperCase()}
+            </div>
           </div>
           <div className="currentDateTime-container">
             <CalendarMonthOutlinedIcon fontSize="small" />
-            <div className="timeDate-container">{current_date}</div>
+            <div className="timeDate-container">{formattedDateTime}</div>
           </div>
         </div>
       </Card>

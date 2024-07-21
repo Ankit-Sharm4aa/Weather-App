@@ -19,7 +19,7 @@ type Props = {
 
 function DailyForecast({ dt, lat, lon }: Props) {
   let formatted_forecast_data;
-  const date = new Date(dt ? dt * 1000 : 1 * 1000);
+  const date = new Date(dt ? dt * 1000 : 0);
   const formatted_date = date?.toISOString().slice(0, 10);
   const [data, setData] = useState<ForecastApiResponse>();
   // const [formatted_forecast_data, setForecastData] = useState<listDTO[]>();
@@ -73,7 +73,9 @@ function DailyForecast({ dt, lat, lon }: Props) {
                         </span>
                       </span>
                       <span className="forecast1-date">
-                        {formatted_forecast_data[i]?.dt_txt.split(" ")[1]}
+                        {formatted_forecast_data[i]?.dt_txt
+                          .split(" ")[1]
+                          .slice(0, 5)}
                       </span>
                     </div>
                   </ListItemText>

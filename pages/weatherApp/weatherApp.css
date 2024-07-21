@@ -4,7 +4,7 @@ html,
   height: 100%;
 }
 .weather-app-container {
-  padding: 20px;
+  padding: 1.2rem;
   position: absolute;
   top: 0px;
 }
@@ -21,16 +21,16 @@ html,
 }
 .sidebar {
   position: absolute;
-  width: 80px;
+  width: 4.5rem;
 }
 .flex-container {
   position: relative;
   display: flex;
-  gap: 20px;
+  gap: 1.2rem;
   flex-wrap: wrap;
-  margin-left: 120px;
+  margin-left: 7rem;
 }
 .Highlights,
 .weekly-forecasts {
-  margin-left: 20px;
+  margin-left: 1.2rem;
 }
