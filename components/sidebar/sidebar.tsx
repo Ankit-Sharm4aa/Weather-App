@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Paper } from "@mui/material";
+import { Box } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -25,7 +25,7 @@ function Sidebar() {
     setActiveButton(buttonName);
   };
   return (
-    <Paper variant="elevation" elevation={4} className="sidebar-main">
+    <Box className="sidebar-main">
       <Stack gap={3}>
         <div className="sidebar-top-container">
           <div className="sidebar-top">
@@ -63,7 +63,7 @@ function Sidebar() {
           <Avatar src={profilePic.src} />
         </IconButton>
       </Stack>
-    </Paper>
+    </Box>
   );
 }
 

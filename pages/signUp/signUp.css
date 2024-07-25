@@ -1,34 +1,58 @@
 .signup {
   background-color: black;
+  min-height: 100vh;
 }
-.bg-image {
-  height: 727px;
-  width: 727px;
-  opacity: 0.5;
-}
-h1 {
-  margin-bottom: 20px;
-  text-align: center;
+
+.signUp-heading {
   font-weight: normal;
-  color: yellow;
-}
-p {
   text-align: center;
+  font-size: clamp(1.8rem, 1rem + 2vw, 2.5rem);
+  color: yellow;
+  margin-bottom: 1rem;
 }
-label {
-  font-weight: bold;
+.signUpForm-wrapper {
+  padding: 0 1.4rem;
 }
-.icon {
-  margin-top: 20px;
+.signUpForm-container {
+  max-width: 22rem;
+  min-height: 27.5rem;
+  padding: 3rem;
+  margin: auto;
+}
+.signUp-grid-container {
+  margin-bottom: 1rem;
+}
+.signUpText-wrapper {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 0.4rem;
+}
+.icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 .create-button {
   display: flex;
   justify-content: center;
 }
-a {
+.signIn-link {
   text-decoration: none;
   color: yellow;
+}
+
+@media (min-height: 42rem) {
+  .signUp-heading {
+    margin: 1.5rem 0;
+  }
+  .signUp-grid-container {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .signUpForm-container {
+    max-width: 28rem;
+  }
 }

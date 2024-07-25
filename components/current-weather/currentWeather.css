@@ -1,4 +1,5 @@
 .currentWeather-container {
+  color: white;
   height: 330px;
   width: 470px;
   border-radius: 15px;
@@ -15,7 +16,6 @@
 }
 .searchbar-input {
   border-bottom: 2px solid white;
-  color: white;
 }
 
 .current-weather-img {

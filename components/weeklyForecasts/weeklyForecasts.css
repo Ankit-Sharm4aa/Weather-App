@@ -1,6 +1,7 @@
 .weeklyForecast-heading {
   font-weight: bold;
   margin-bottom: 1.2rem;
+  color: white;
 }
 .weeklyForecast {
   height: 300px;
@@ -11,6 +12,7 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow: scroll;
+  color: white;
 }
 .weeklyForecast-list {
   padding: 0.9rem;

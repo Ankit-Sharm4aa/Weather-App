@@ -1,7 +1,8 @@
 .forecast-heading {
   margin-bottom: 1.2rem;
+  color: white;
 }
-.card-main {
+.box-main {
   height: 300px;
   width: 470px;
   padding: 0.8rem;
@@ -22,8 +23,6 @@
   display: flex;
   flex-direction: row;
   gap: 220px;
-}
-.forecast-1 {
   color: white;
   font-size: 15px;
 }

@@ -1,5 +1,3 @@
-"use client";
-
 import Routes from "./Routes/Routes";
 import "./globals.css";
 

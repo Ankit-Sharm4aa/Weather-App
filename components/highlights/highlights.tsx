@@ -1,7 +1,6 @@
 import React from "react";
-import { Paper, createTheme } from "@mui/material";
+import { Box, createTheme } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
 import Stack from "@mui/material/Stack";
 import AtmPressureChart from "../atmPressure-chart/atmPressure-Chart";
 import SunChart from "../sunChart/sunChart";
@@ -67,11 +66,11 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
   const Atm_Pressure = main?.pressure;
   return (
     <>
-      <Paper className="highlights-container" variant="elevation" elevation={4}>
+      <Box className="highlights-container">
         <h5 className="highlights-heading">Today's Highlights</h5>
         <Grid container gap={2} sx={{ justifyContent: "center" }}>
           <Grid item>
-            <Card className="highlights-wind">
+            <Box className="highlights-wind">
               {/* <WindCompass direction={windDirection} /> */}
               <h5 className="wind-heading">Wind</h5>
               <Stack direction="column" gap={1}>
@@ -95,10 +94,10 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
                   </Stack>
                 </div>
               </Stack>
-            </Card>
+            </Box>
           </Grid>
           <Grid item>
-            <Card className="highlights-atmPressure">
+            <Box className="highlights-atmPressure">
               <h5 className="atmPressure-heading">Atmospheric Pressure</h5>
               <div className="atmPressure-chart">
                 <AtmPressureChart main={main} />
@@ -111,10 +110,10 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
                 <div className="atmPressure-value">{Atm_Pressure}</div>
                 <div className="atmPressure-unit">hPA</div>
               </div>
-            </Card>
+            </Box>
           </Grid>
           <Grid item>
-            <Card className="highlights-sun">
+            <Box className="highlights-sun">
               <h5 className="sun-heading">Sunrise & Sunset</h5>
               <div className="sun-Chart">
                 <SunChart sys={sys} dt={dt} />
@@ -129,10 +128,10 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
                   <TbSunset2 fontSize="30px" />
                 </Stack>
               </div>
-            </Card>
+            </Box>
           </Grid>
           <Grid item>
-            <Card className="highlights-humidity">
+            <Box className="highlights-humidity">
               <div style={{ display: "flex", gap: "5px" }}>
                 <WaterDropOutlinedIcon fontSize="medium" />
                 <div className="humidity-heading">Humidity</div>
@@ -141,10 +140,10 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
                 {Humidity}
                 <span className="humidity-percent">%</span>
               </div>
-            </Card>
+            </Box>
           </Grid>
           <Grid item>
-            <Card className="highlights-visibility">
+            <Box className="highlights-visibility">
               <div style={{ display: "flex", gap: "5px" }}>
                 <VisibilityOutlinedIcon fontSize="medium" />
                 <div className="visibility-heading">Visibility</div>
@@ -153,10 +152,10 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
                 {Visibility}
                 <span className="visibility-unit">km</span>
               </div>
-            </Card>
+            </Box>
           </Grid>
           <Grid item>
-            <Card className="highlights-feelslike">
+            <Box className="highlights-feelslike">
               <div style={{ display: "flex" }}>
                 <DeviceThermostatOutlinedIcon fontSize="medium" />
                 <div className="feelslike-heading">Feels like</div>
@@ -165,10 +164,10 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
                 {Feels_like}
                 <sup>o</sup>
               </div>
-            </Card>
+            </Box>
           </Grid>
         </Grid>
-      </Paper>
+      </Box>
     </>
   );
 }

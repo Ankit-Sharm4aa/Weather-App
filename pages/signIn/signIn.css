@@ -1,33 +1,35 @@
 .signin {
   background-color: black;
+  min-height: 100vh;
+  color: white;
 }
-h1 {
+.signIn-heading {
   text-align: center;
   color: yellow;
+  font-size: clamp(2rem, 1rem + 2vw, 2.5rem);
   font-weight: normal;
-  margin: 20px 0;
+  margin: 1rem 0;
 }
 
-.weather-image {
-  height: 727px;
-  width: 727px;
-  opacity: 0.5;
-}
 .signin-icon {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-top: 70px;
+  padding-top: 20px;
 }
-label {
-  font-weight: bold;
+.Email-label,
+.Password-label {
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+.signInForm-wrapper {
+  padding: 20px;
 }
 .signIn-form {
-  height: 440px;
-  width: 400px;
-  background-color: hsl(240, 58%, 4%);
-  color: white;
-  padding: 35px;
+  min-height: 27.5rem;
+  max-width: 22rem;
+  background-color: hsl(240, 68%, 5%);
+  padding: 10px;
   margin: auto;
   border: 1px solid hsla(60, 100%, 80%, 0.62);
 }
@@ -38,12 +40,33 @@ label {
   display: flex;
   justify-content: center;
 }
-a {
+.login-options-text {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+.link-wrapper {
   text-decoration: none;
   color: yellow;
 }
-p,
-a {
-  margin-top: 20px;
-  text-align: center;
+.text-wrapper {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-size: clamp(1rem, 1rem + 0.3vw, 2.5rem);
+}
+
+@media (min-height: 42rem) {
+  .signIn-form {
+    min-height: 30rem;
+  }
+  .signIn-heading {
+    margin: 1.5rem 0rem;
+  }
+}
+@media (min-width: 48rem) {
+  .signIn-form {
+    max-width: 28rem;
+  }
 }

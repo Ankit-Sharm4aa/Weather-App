@@ -1,7 +1,5 @@
-body,
-html,
 .weather-app {
-  height: 100%;
+  min-height: 100vh;
 }
 .weather-app-container {
   padding: 1.2rem;
@@ -13,7 +11,7 @@ html,
   filter: blur(10px);
   -webkit-filter: blur(10px);
   -webkit-filter: brightness(30%);
-  height: 100%;
+  min-height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

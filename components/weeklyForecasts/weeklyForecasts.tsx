@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Card, Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -61,7 +61,7 @@ function WeeklyForecasts({ dt, lat, lon }: Props) {
   return (
     <div className="weeklyForecast-container">
       <h5 className="weeklyForecast-heading">Weekly Forecasts</h5>
-      <Card className="weeklyForecast">
+      <Box className="weeklyForecast">
         {weekly_forecast_data && (
           <List className="weeklyForecast-list" disablePadding>
             {/* {loop} */}
@@ -126,7 +126,7 @@ function WeeklyForecasts({ dt, lat, lon }: Props) {
             })}
           </List>
         )}
-      </Card>
+      </Box>
     </div>
   );
 }

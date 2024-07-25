@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "@mui/material";
+import { Box } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import SearchIcon from "@mui/icons-material/Search";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -65,15 +65,16 @@ function CurrentWeather({ city, main, dt, weather, timezone }: Props) {
 
   return (
     <>
-      <Card className="currentWeather-container">
+      <Box className="currentWeather-container">
         <div className="searchbar-container">
           <FormControl variant="standard" size="small" className="searchbar">
             <Input
               className="searchbar-input"
               id="input-with-icon-adornment"
+              style={{ color: "white" }}
               startAdornment={
                 <InputAdornment position="start">
-                  <SearchIcon />
+                  <SearchIcon style={{ color: "white" }} />
                 </InputAdornment>
               }
             />
@@ -106,7 +107,7 @@ function CurrentWeather({ city, main, dt, weather, timezone }: Props) {
             <div className="timeDate-container">{formattedDateTime}</div>
           </div>
         </div>
-      </Card>
+      </Box>
     </>
   );
 }

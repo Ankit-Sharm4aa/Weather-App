@@ -1,3 +1,4 @@
+"use client";
 import React, { useCallback, useState, useEffect } from "react";
 import "./weatherApp.css";
 import Sidebar from "@/components/sidebar";
