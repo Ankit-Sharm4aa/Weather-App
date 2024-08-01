@@ -10,17 +10,11 @@
   font-weight: normal;
   margin: 1rem 0;
 }
-
 .signin-icon {
   display: flex;
   justify-content: center;
   gap: 30px;
   padding-top: 20px;
-}
-.Email-label,
-.Password-label {
-  font-weight: bolder;
-  font-size: 1.2em;
 }
 .signInForm-wrapper {
   padding: 20px;
@@ -32,31 +26,21 @@
   padding: 10px;
   margin: auto;
   border: 1px solid hsla(60, 100%, 80%, 0.62);
-}
-.signInForm-container {
-  padding: 50px;
-}
-.signin-button {
   display: flex;
   justify-content: center;
-}
-.login-options-text {
-  display: flex;
-  justify-content: center;
-  color: white;
-}
-.link-wrapper {
-  text-decoration: none;
-  color: yellow;
-}
-.text-wrapper {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  font-size: clamp(1rem, 1rem + 0.3vw, 2.5rem);
 }
 
+.Google-btn,
+.Github-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem;
+}
+.signin-options-icon {
+  height: 24px;
+  width: 24px;
+}
 @media (min-height: 42rem) {
   .signIn-form {
     min-height: 30rem;

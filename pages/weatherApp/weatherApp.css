@@ -1,12 +1,15 @@
 .weather-app {
   min-height: 100vh;
 }
-.weather-app-container {
-  padding: 1.2rem;
-  position: absolute;
-  top: 0px;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.459);
+  color: white;
+  padding: 0.5rem;
 }
-.Bg-image {
+/* .Bg-image {
   background-image: url("./images/valentin-muller-bWtd1ZyEy6w-unsplash.jpg");
   filter: blur(10px);
   -webkit-filter: blur(10px);
@@ -16,19 +19,22 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-}
-.sidebar {
-  position: absolute;
-  width: 4.5rem;
-}
+} */
 .flex-container {
-  position: relative;
   display: flex;
   gap: 1.2rem;
   flex-wrap: wrap;
-  margin-left: 7rem;
+  padding: 0.5rem;
 }
-.Highlights,
+.currentWeather {
+  flex: 1;
+}
+.Highlights {
+  flex: 2;
+}
+.daily-forecasts {
+  flex: 1;
+}
 .weekly-forecasts {
-  margin-left: 1.2rem;
+  flex: 2;
 }

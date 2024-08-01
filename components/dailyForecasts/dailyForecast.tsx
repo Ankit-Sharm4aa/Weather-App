@@ -4,10 +4,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import Stack from "@mui/material/Stack";
-import Moment from "react-moment";
 import "./dailyForecast.css";
-import moment from "moment";
 import getForecastData from "../services/networking/forecast-data";
 import { ForecastApiResponse, listDTO } from "../types/weather/forecast";
 

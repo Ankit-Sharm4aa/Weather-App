@@ -1,9 +1,8 @@
 "use client";
-import React, { useCallback, useState } from "react";
+import React from "react";
 import "./signIn.css";
 import {
   Button,
-  Paper,
   Grid,
   TextField,
   InputLabel,
@@ -11,140 +10,67 @@ import {
   InputAdornment,
   IconButton,
 } from "@mui/material";
+import { doSocialLogin } from "@/app/actions";
+import Box from "@mui/material/Box";
+import Component from "@/components/login-btn/login-btn";
 import WbSunny from "@mui/icons-material/WbSunny";
 import NightsStayIcon from "@mui/icons-material/NightsStay";
-import image from "./images/valentin-muller-bWtd1ZyEy6w-unsplash.jpg";
 import Stack from "@mui/material/Stack";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import EmailIcon from "@mui/icons-material/Email";
 import { Link } from "react-router-dom";
 import { yellow } from "@mui/material/colors";
+import { SessionProvider } from "next-auth/react";
+import googleIcon from "./images/icons8-google-48.svg";
+import githubIcon from "./images/github-mark.svg";
 
 const SignIn: React.FC = () => {
-  const [showPassword, setShowPassword] = React.useState(false);
-
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
-
-  const handleMouseDownPassword = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
-    event.preventDefault();
-  };
-
+  const buttonData = [
+    {
+      id: 1,
+      name: "Google",
+      icon: googleIcon,
+    },
+    {
+      id: 2,
+      name: "Github",
+      icon: githubIcon,
+    },
+  ];
   return (
     <div className="signin">
-      <img src="" className="weather-image"></img>
       <div className="signin-icon">
         <WbSunny fontSize="large" sx={{ color: yellow[500] }} />
         <NightsStayIcon fontSize="large" color="secondary" />
       </div>
       <h1 className="signIn-heading">Login to your Account</h1>
       <div className="signInForm-wrapper">
-        <Paper
-          square={false}
-          variant="outlined"
-          className="signIn-form"
-          sx={{
-            backgroundColor: "hsl(240, 68%, 5%)",
-            border: "1px solid hsla(60, 100%, 80%, 0.62)",
-          }}
-        >
-          <Grid
-            container
-            className="signInForm-container"
-            direction={"column"}
-            gap={8}
-          >
-            <Grid item>
-              <InputLabel
-                htmlFor="outlined-adornment-email"
-                style={{ color: "white", fontSize: "1rem" }}
-              >
-                Email
-              </InputLabel>
-              <OutlinedInput
-                className="outlined-adornment-email"
-                type={"Email"}
-                size="small"
-                sx={{
-                  input: { color: "white" },
-                  border: "2px solid yellow",
-                  width: "100%",
-                }}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="Email icon"
-                      edge="end"
-                      style={{ color: "white" }}
-                    >
-                      <EmailIcon />
-                    </IconButton>
-                  </InputAdornment>
-                }
-              />
-            </Grid>
-            <Grid item>
-              <InputLabel
-                htmlFor="outlined-adornment-password"
-                style={{
-                  color: "white",
-                }}
-              >
-                Password
-              </InputLabel>
-              <OutlinedInput
-                className="outlined-adornment-password"
-                type={showPassword ? "text" : "password"}
-                size="small"
-                sx={{
-                  input: { color: "white" },
-                  border: "2px solid yellow",
-                  width: "100%",
-                }}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
-                      edge="end"
-                      style={{ color: "white" }}
-                    >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                }
-              />
-            </Grid>
-          </Grid>
-          <div className="signin-button">
-            <Link to="/Weather/Dashboard">
-              <Button
-                variant="outlined"
-                sx={{
-                  border: "2px solid yellow",
-                  padding: "8px 10px ",
-                  color: "yellow",
-                }}
-              >
-                Login
-              </Button>
-            </Link>
-          </div>
-          <div>
-            <span className="login-options-text"> Or continue with :</span>
-          </div>
-          <span className="text-wrapper">
-            <div className="" style={{ color: "white" }}>
-              New User?
-            </div>
-            <Link to="/Signup" className="link-wrapper">
-              Sign-Up
-            </Link>
-          </span>
-        </Paper>
+        <Box className="signIn-form">
+          <form action={doSocialLogin}>
+            <Stack direction={"column"} gap={2} className="signin-Options">
+              {buttonData.map((button) => {
+                return (
+                  <button
+                    type="submit"
+                    name="action"
+                    value={`${button.name}`}
+                    key={button.id}
+                    className={`${button.name}-btn`}
+                  >
+                    <img
+                      src={button.icon.src}
+                      alt={`${button.name} icon`}
+                      className="signin-options-icon"
+                    />
+                    Sign in with {button.name}
+                  </button>
+                );
+              })}
+              <Link to="/Weather/Dashboard">
+                <button>Next page</button>
+              </Link>
+            </Stack>
+          </form>
+        </Box>
       </div>
     </div>
   );

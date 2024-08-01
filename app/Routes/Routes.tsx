@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import SignIn from "@/pages/signIn";
-import SignUp from "@/pages/signUp";
 import WeatherApp from "@/pages/weatherApp";
+import Navbar from "@/components/navbar";
 
 import {
   createBrowserRouter,
@@ -14,11 +14,7 @@ const Routes: React.FC = () => {
   const Router = createBrowserRouter([
     {
       path: "",
-      element: <Navigate to="/Signup" />,
-    },
-    {
-      path: "/Signup",
-      element: <SignUp />,
+      element: <Navigate to="/Signin" />,
     },
     {
       path: "/Signin",

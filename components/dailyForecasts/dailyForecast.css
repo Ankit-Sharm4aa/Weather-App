@@ -3,12 +3,11 @@
   color: white;
 }
 .box-main {
-  height: 300px;
-  width: 470px;
-  padding: 0.8rem;
+  min-height: 18.75rem;
+  max-width: 29.3rem;
+  /* padding: 0.4rem; */
   background-color: hsla(240, 65%, 3%, 0.549);
   border-radius: 1rem;
-  position: relative;
   border: 2px solid yellow;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -24,7 +23,7 @@
   flex-direction: row;
   gap: 220px;
   color: white;
-  font-size: 15px;
+  font-size: 1rem;
 }
 .forecast1-temp {
   flex: 1;

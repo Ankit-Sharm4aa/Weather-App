@@ -1,9 +1,9 @@
 .currentWeather-container {
   color: white;
-  height: 330px;
-  width: 470px;
-  border-radius: 15px;
-  padding: 20px;
+  min-height: 20.6rem;
+  max-width: 29.3rem;
+  border-radius: 1rem;
+  padding: 1rem;
   border: 2px solid yellow;
   background-color: hsla(240, 65%, 3%, 0.549);
 }
@@ -12,7 +12,7 @@
   justify-content: flex-end;
 }
 .searchbar {
-  width: 180px;
+  max-width: 11.5rem;
 }
 .searchbar-input {
   border-bottom: 2px solid white;
@@ -23,34 +23,34 @@
   width: 60px;
 }
 .current-temp {
-  font-size: 2.6em;
+  font-size: clamp(1.4rem, 1rem + 2vw, 3rem);
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 0.6rem;
   font-weight: bold;
 }
 .caption-text {
-  font-size: 1.2em;
+  font-size: clamp(1.4rem, 1rem + 0.5vw, 2rem);
   margin-bottom: 1rem;
 }
 .locationTime-container {
-  margin-top: 20px;
+  margin-top: 1.2rem;
 }
 .currentLocation-container {
   display: flex;
-  gap: 10px;
+  gap: 0.6rem;
 }
 .current-location {
-  font-size: 0.9em;
+  font-size: 0.9rem;
   margin-top: 2px;
 }
 .currentDateTime-container {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
 }
 .timeDate-container {
   display: flex;
-  gap: 5px;
-  margin-top: 3px;
+  gap: 0.3rem;
+  margin-top: 0.1rem;
   font-size: 0.9em;
 }
