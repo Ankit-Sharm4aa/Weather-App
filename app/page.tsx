@@ -1,10 +1,5 @@
-import Routes from "./Routes/Routes";
 import "./globals.css";
-
+import SignIn from "@/pages/signIn";
 export default function Home() {
-  return (
-    <>
-      <Routes />
-    </>
-  );
+  return <SignIn />;
 }

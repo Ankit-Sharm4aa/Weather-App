@@ -18,8 +18,12 @@ type Props = {
   city: string;
 };
 
-const WeatherApp = ({ city }: Props) => {
+const WeatherApp = async ({ city }: Props) => {
   //understand why useCallback useEffect and check how useState is used so tht we can fetch the data in this component
+
+  const session = await auth();
+
+  if (!session?.user) redirect("/");
 
   const fetchData = useCallback(
     async (city: string) => {

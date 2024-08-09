@@ -1,0 +1,11 @@
+.Google-btn,
+.Github-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem;
+}
+.signin-options-icon {
+  height: 24px;
+  width: 24px;
+}
