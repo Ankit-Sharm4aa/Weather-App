@@ -3,9 +3,8 @@
   color: white;
 }
 .box-main {
-  min-height: 18.75rem;
-  max-width: 29.3rem;
-  /* padding: 0.4rem; */
+  height: 18.75rem;
+  padding: 0.4rem;
   background-color: hsla(240, 65%, 3%, 0.549);
   border-radius: 1rem;
   border: 2px solid yellow;
@@ -21,12 +20,11 @@
 .forecast-1 {
   display: flex;
   flex-direction: row;
-  gap: 220px;
   color: white;
   font-size: 1rem;
 }
 .forecast1-temp {
-  flex: 1;
+  flex: 5;
 }
 .forecast1-date {
   flex: 1;

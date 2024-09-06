@@ -1,64 +1,61 @@
 .highlights-container {
   color: white;
-  height: 330px;
-  width: 860px;
-  padding: 10px;
-  border-radius: 15px;
+  min-height: 20.6rem;
+  padding: 0.6rem;
+  border-radius: 0.9rem;
   border: 2px solid yellow;
   background-color: hsla(240, 65%, 3%, 0.549);
 }
 .highlights-wind,
 .highlights-atmPressure,
 .highlights-sun {
-  padding: 10px;
+  padding: 0.6rem;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   border: 1px solid rgba(233, 233, 3, 0.664);
 }
 .highlights-humidity,
 .highlights-visibility,
 .highlights-feelslike {
-  padding: 15px;
+  padding: 0.9rem;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   border: 1px solid rgba(233, 233, 3, 0.664);
 }
 
 .highlights-heading {
-  margin-bottom: 10px;
+  margin-bottom: 0.6rem;
 }
 .highlights-wind {
   background-color: rgba(0, 0, 0, 0.836);
-  height: 180px;
-  width: 260px;
+  min-height: 11.8rem;
 }
 .wind-heading {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 .windspeed,
 .windgust {
   display: flex;
-  gap: 8px;
-  font-size: 30px;
+  gap: 0.5rem;
+  font-size: 1.8rem;
 }
 .wind-unit,
 .wind-text {
-  font-size: 10px;
+  font-size: 0.6rem;
   margin-top: 4px;
 }
 .highlights-atmPressure {
   background-color: rgba(0, 0, 0, 0.836);
-  height: 180px;
-  width: 260px;
+  min-height: 11.25rem;
 }
 .atmPressure-chart {
   display: flex;
-  justify-items: center;
+  justify-content: center;
 }
 .atmPressure-indicator {
   display: flex;
   gap: 40px;
-  margin-left: 60px;
+  justify-content: center;
 }
 .atmPressure-unit-container {
   display: flex;
@@ -70,13 +67,12 @@
   font-size: 26px;
 }
 .atmPressure-unit {
-  font-size: 10px;
+  font-size: 0.6rem;
   margin-top: 15px;
 }
 .highlights-sun {
   background-color: rgba(0, 0, 0, 0.836);
-  height: 180px;
-  width: 260px;
+  min-height: 11.25rem;
 }
 .sun-time-container,
 .sunrise-time-container,
@@ -88,23 +84,24 @@
   gap: 2px;
 }
 .sun-Chart {
-  margin-top: 10px;
+  margin-top: 0.6rem;
+  display: flex;
+  justify-content: center;
 }
 .sun-time-container {
-  padding: 0 55px;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 2.6rem;
 }
 .sunrise-time,
 .sunset-time {
-  font-size: 10px;
+  font-size: 0.6rem;
 }
 .time-unit {
-  font-size: 10px;
+  font-size: 0.6rem;
 }
 .highlights-humidity {
   background-color: rgba(0, 0, 0, 0.836);
-  height: 70px;
-  width: 260px;
+  min-height: 70px;
   display: flex;
   justify-content: space-between;
 }
@@ -112,12 +109,11 @@
   font-size: 23px;
 }
 .humidity-percent {
-  font-size: 10px;
+  font-size: 0.6rem;
 }
 .highlights-visibility {
   background-color: rgba(0, 0, 0, 0.836);
-  height: 70px;
-  width: 260px;
+  min-height: 70px;
   display: flex;
   justify-content: space-between;
 }
@@ -125,13 +121,12 @@
   font-size: 23px;
 }
 .visibility-unit {
-  font-size: 10px;
+  font-size: 0.6rem;
   margin-left: 5px;
 }
 .highlights-feelslike {
   background-color: rgba(0, 0, 0, 0.836);
-  height: 70px;
-  width: 260px;
+  min-height: 70px;
   display: flex;
   justify-content: space-between;
 }

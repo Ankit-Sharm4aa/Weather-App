@@ -26,10 +26,9 @@ function CurrentWeather({ city, main, dt, weather, timezone }: Props) {
   const date = dt ? dt * 1000 : 0;
   const timezone_value = timezone ? timezone * 1000 : 0;
   const current_date = new Date(date + timezone_value).toUTCString();
-  const location = city.split(",");
+  // const location = city.split(",");
   let timestamp: number = date + timezone_value;
   let date1: Date = new Date(timestamp);
-
   function pad(number: number): string {
     if (number < 10) {
       return "0" + number;
@@ -99,7 +98,7 @@ function CurrentWeather({ city, main, dt, weather, timezone }: Props) {
           <div className="currentLocation-container">
             <LocationOnOutlinedIcon fontSize="small" />
             <div className="current-location">
-              {location[0] + "," + location[1].toUpperCase()}
+              {/* {location[0] + "," + location[1].toUpperCase()} */}
             </div>
           </div>
           <div className="currentDateTime-container">

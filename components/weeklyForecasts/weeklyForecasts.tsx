@@ -10,6 +10,7 @@ import { IoRainy } from "react-icons/io5";
 import "./weeklyForecasts.css";
 import getForecastData from "../services/networking/forecast-data";
 import { ForecastApiResponse, listDTO } from "../types/weather/forecast";
+import Grid from "@mui/material/Grid";
 
 type Props = {
   dt: number;
@@ -93,13 +94,20 @@ function WeeklyForecasts({ dt, lat, lon }: Props) {
                       </div>
                     </Stack>
                   </div>
-                  <Stack
-                    direction="row"
-                    gap={10}
+                  <Grid
+                    container
                     className="weeklyweather-forecasts"
-                    style={{ flex: 3 }}
+                    style={{ flex: 1.5 }}
                   >
-                    <div className="temp">
+                    <Grid
+                      item
+                      xs={6}
+                      sm={3}
+                      md={6}
+                      lg={3}
+                      xl={3}
+                      className="temp"
+                    >
                       <ThermostatIcon fontSize="small" className="temp-icon" />
                       <div>
                         {(
@@ -107,20 +115,46 @@ function WeeklyForecasts({ dt, lat, lon }: Props) {
                         ).toFixed(2)}{" "}
                         <sup>o</sup>
                       </div>
-                    </div>
-                    <div className="wind">
+                    </Grid>
+                    <Grid
+                      item
+                      xs={6}
+                      sm={3}
+                      md={6}
+                      lg={3}
+                      xl={3}
+                      className="wind"
+                    >
                       <AirIcon fontSize="small" className="wind-icon" />
                       <div> {weekly_forecast_data[index]?.wind?.speed} m/s</div>
-                    </div>
-                    <div className="humid">
+                    </Grid>
+                    <Grid
+                      item
+                      xs={6}
+                      sm={3}
+                      md={6}
+                      lg={3}
+                      xl={3}
+                      className="humid"
+                    >
                       <WaterDropIcon fontSize="small" className="humid-icon" />
                       <div> {weekly_forecast_data[index]?.main.humidity}%</div>
-                    </div>
-                    <div className="precipitation">
+                    </Grid>
+                    <Grid
+                      item
+                      xs={6}
+                      sm={3}
+                      md={6}
+                      lg={3}
+                      xl={3}
+                      className="precipitation"
+                    >
                       <IoRainy className="precipitation-icon" />
-                      <div>{weekly_forecast_data[index]?.pop * 100}%</div>
-                    </div>
-                  </Stack>
+                      <div>
+                        {(weekly_forecast_data[index]?.pop * 100).toFixed(0)}%
+                      </div>
+                    </Grid>
+                  </Grid>
                 </ListItem>
               );
             })}

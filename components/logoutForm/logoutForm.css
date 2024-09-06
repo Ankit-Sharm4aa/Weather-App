@@ -1,5 +1,4 @@
 .signout-btn {
-  max-width: 1rem;
-  border-radius: 0.5rem;
-  padding: 0.2rem;
+  border-radius: 0.2rem;
+  padding: 0.2rem 0.5rem;
 }

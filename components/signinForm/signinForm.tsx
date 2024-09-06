@@ -4,7 +4,7 @@ import googleIcon from "./images/icons8-google-48.svg";
 import githubIcon from "./images/github-mark.svg";
 import { Stack } from "@mui/material";
 import { doSocialLogin } from "@/app/actions";
-const SigninForm = () => {
+const SigninForm: React.FC = () => {
   const buttonData = [
     {
       id: 1,

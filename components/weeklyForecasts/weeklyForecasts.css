@@ -4,8 +4,7 @@
   color: white;
 }
 .weeklyForecast {
-  height: 300px;
-  width: 860px;
+  height: 18.75rem;
   border-radius: 1rem;
   background-color: hsla(240, 65%, 3%, 0.549);
   border: 2px solid yellow;
@@ -16,17 +15,16 @@
 }
 .weeklyForecast-list {
   padding: 0.9rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 .weeklyweather-forecasts {
-  margin-left: 1.2rem;
+  margin-left: 0.5rem;
 }
 .temp,
 .humid,
 .wind,
 .precipitation {
   display: flex;
-  flex: 1;
 }
 
 .temp-icon,
@@ -38,4 +36,17 @@
 
 .precipitation-icon {
   font-size: 1.3em;
+}
+
+@media (max-width: 27.8rem) {
+  .weeklyForecast-list {
+    padding: 0rem;
+    font-size: 0.7rem;
+    font-weight: bolder;
+  }
+}
+@media (min-width: 37.5rem) and (max-width: 40.25rem) {
+  .weeklyForecast-list {
+    font-size: 0.78rem;
+  }
 }

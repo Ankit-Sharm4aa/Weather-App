@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, createTheme } from "@mui/material";
+import { Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import AtmPressureChart from "../atmPressure-chart/atmPressure-Chart";
@@ -68,8 +68,8 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
     <>
       <Box className="highlights-container">
         <h5 className="highlights-heading">Today's Highlights</h5>
-        <Grid container gap={2} sx={{ justifyContent: "center" }}>
-          <Grid item>
+        <Grid container spacing={1}>
+          <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
             <Box className="highlights-wind">
               {/* <WindCompass direction={windDirection} /> */}
               <h5 className="wind-heading">Wind</h5>
@@ -96,7 +96,7 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
               </Stack>
             </Box>
           </Grid>
-          <Grid item>
+          <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
             <Box className="highlights-atmPressure">
               <h5 className="atmPressure-heading">Atmospheric Pressure</h5>
               <div className="atmPressure-chart">
@@ -112,7 +112,7 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
               </div>
             </Box>
           </Grid>
-          <Grid item>
+          <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
             <Box className="highlights-sun">
               <h5 className="sun-heading">Sunrise & Sunset</h5>
               <div className="sun-Chart">
@@ -130,7 +130,7 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
               </div>
             </Box>
           </Grid>
-          <Grid item>
+          <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
             <Box className="highlights-humidity">
               <div style={{ display: "flex", gap: "5px" }}>
                 <WaterDropOutlinedIcon fontSize="medium" />
@@ -142,7 +142,7 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
               </div>
             </Box>
           </Grid>
-          <Grid item>
+          <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
             <Box className="highlights-visibility">
               <div style={{ display: "flex", gap: "5px" }}>
                 <VisibilityOutlinedIcon fontSize="medium" />
@@ -154,7 +154,7 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
               </div>
             </Box>
           </Grid>
-          <Grid item>
+          <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
             <Box className="highlights-feelslike">
               <div style={{ display: "flex" }}>
                 <DeviceThermostatOutlinedIcon fontSize="medium" />

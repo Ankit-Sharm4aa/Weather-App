@@ -5,8 +5,7 @@ import { signIn, signOut } from "@/auth";
 export async function doSocialLogin(formData) {
   const action = formData.get("action");
 
-  await signIn(action, { redirectTo: "/pages/weatherApp" });
-  console.log(action);
+  await signIn(action, { redirectTo: "/weatherApp/" });
 }
 
 export async function Logout() {

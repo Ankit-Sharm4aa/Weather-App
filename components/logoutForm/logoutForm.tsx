@@ -5,7 +5,7 @@ const LogoutForm = () => {
   return (
     <form action={Logout}>
       <button className="signout-btn" type="submit">
-        SignOut
+        Sign Out
       </button>
     </form>
   );

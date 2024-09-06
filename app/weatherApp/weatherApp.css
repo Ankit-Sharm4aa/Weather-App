@@ -1,5 +1,6 @@
 .weather-app {
   min-height: 100vh;
+  background-color: rgb(0, 0, 0);
 }
 .navbar {
   display: flex;
@@ -20,21 +21,10 @@
   background-size: cover;
   position: relative;
 } */
-.flex-container {
+.grid-wrapper {
   display: flex;
-  gap: 1.2rem;
-  flex-wrap: wrap;
-  padding: 0.5rem;
+  padding: 1.5rem;
+  width: 100%;
 }
-.currentWeather {
-  flex: 1;
-}
-.Highlights {
-  flex: 2;
-}
-.daily-forecasts {
-  flex: 1;
-}
-.weekly-forecasts {
-  flex: 2;
+.grid-container {
 }
