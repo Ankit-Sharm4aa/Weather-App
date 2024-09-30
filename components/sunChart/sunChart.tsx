@@ -41,8 +41,10 @@ function SunChart({ sys, dt }: Props) {
   const sunset = sys?.sunset * 1000;
   const difference = sunset - sunrise;
   const hourly_difference = Math.floor(difference / 1000 / 60 / 60);
-  const time_elapsed = Math.floor((dt * 1000 - sunrise) / 1000 / 60 / 60);
-  console.log("current_time", time_elapsed, hourly_difference, sunset, sunrise);
+  const time_elapsed = Math.min(
+    Math.floor((dt * 1000 - sunrise) / 1000 / 60 / 60),
+    hourly_difference
+  );
   return (
     <GaugeContainer
       width={230}

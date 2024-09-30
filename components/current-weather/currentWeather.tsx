@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import SearchIcon from "@mui/icons-material/Search";
@@ -11,22 +11,37 @@ import "./currentWeather.css";
 import { weatherDTO, mainDTO } from "../types/weather/weather";
 import CircularProgress from "@mui/material/CircularProgress";
 import "moment-timezone";
+import Fuse from "fuse.js";
+import { city_data } from "../assets/citydata";
+import { cities } from "../types/citySearch/citySearch";
 
 type Props = {
   dt: number | undefined;
-  main: mainDTO;
-  weather: weatherDTO[];
+  main: mainDTO | undefined;
+  weather: weatherDTO[] | undefined;
   city: string;
-  timezone: number | undefined;
+  timezone: Date | undefined;
+  setcity: Dispatch<SetStateAction<string>>;
 };
 
-function CurrentWeather({ city, main, dt, weather, timezone }: Props) {
+function CurrentWeather({ city, main, dt, weather, timezone, setcity }: Props) {
+  const [query, setQuery] = useState("");
+  const [filteredData, setFilteredData] = useState<cities>();
+  const fuse = new Fuse(city_data, { keys: ["city"], threshold: 0.3 });
+
+  function handlesuggestion(city: string, country: string) {
+    setcity(`${city},${country}`);
+    setQuery("");
+  }
+  useEffect(() => {
+    const filterData = fuse.search(query).map((result) => result.item);
+    setFilteredData(filterData.slice(0, 5));
+  }, [query]);
+
   const temprature = (main?.temp - 273.15).toFixed(2);
   const weather_message = weather ? weather[0].main : "";
   const date = dt ? dt * 1000 : 0;
   const timezone_value = timezone ? timezone * 1000 : 0;
-  const current_date = new Date(date + timezone_value).toUTCString();
-  // const location = city.split(",");
   let timestamp: number = date + timezone_value;
   let date1: Date = new Date(timestamp);
   function pad(number: number): string {
@@ -71,12 +86,34 @@ function CurrentWeather({ city, main, dt, weather, timezone }: Props) {
               className="searchbar-input"
               id="input-with-icon-adornment"
               style={{ color: "white" }}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
               startAdornment={
                 <InputAdornment position="start">
                   <SearchIcon style={{ color: "white" }} />
                 </InputAdornment>
               }
             />
+            {filteredData && filteredData?.length > 0 && (
+              <ul style={{ listStyleType: "none", padding: 0 }}>
+                {filteredData?.map((suggestion, index) => (
+                  <li
+                    key={index}
+                    style={{
+                      border: "1px solid #ccc",
+                      padding: "8px",
+                      cursor: "pointer",
+                      backgroundColor: "hsla(240, 65%, 3%, 0.549)",
+                    }}
+                    onClick={() =>
+                      handlesuggestion(suggestion.city, suggestion.country)
+                    }
+                  >
+                    {suggestion.city}, {suggestion.country}
+                  </li>
+                ))}
+              </ul>
+            )}
           </FormControl>
         </div>
         {weather && (
@@ -97,9 +134,7 @@ function CurrentWeather({ city, main, dt, weather, timezone }: Props) {
         <div className="locationTime-container">
           <div className="currentLocation-container">
             <LocationOnOutlinedIcon fontSize="small" />
-            <div className="current-location">
-              {/* {location[0] + "," + location[1].toUpperCase()} */}
-            </div>
+            <div className="current-location">{city}</div>
           </div>
           <div className="currentDateTime-container">
             <CalendarMonthOutlinedIcon fontSize="small" />

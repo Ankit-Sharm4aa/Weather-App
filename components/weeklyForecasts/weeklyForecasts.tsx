@@ -13,9 +13,9 @@ import { ForecastApiResponse, listDTO } from "../types/weather/forecast";
 import Grid from "@mui/material/Grid";
 
 type Props = {
-  dt: number;
-  lat: number;
-  lon: number;
+  dt: number | undefined;
+  lat: number | undefined;
+  lon: number | undefined;
 };
 
 function WeeklyForecasts({ dt, lat, lon }: Props) {
@@ -37,19 +37,16 @@ function WeeklyForecasts({ dt, lat, lon }: Props) {
   if (data && data?.list && data?.list.length > 0) {
     weekly_forecast_data = data?.list.filter((date, index, self) => {
       const datekey = new Date(date.dt * 1000).toISOString().slice(0, 10);
-      console.log("datekey", datekey);
       return (
         self.findIndex(
           (d) => new Date(d.dt * 1000).toISOString().slice(0, 10) === datekey
         ) === index
       );
     });
-    console.log("weekly_forecast_data", weekly_forecast_data);
   }
   const fetchData = useCallback(
     async (lat: number, lon: number) => {
       const forecastDataFromApi = await getForecastData(lat, lon);
-      // console.log("forecastDataFromApi", forecastDataFromApi);
       setData(forecastDataFromApi);
     },
     [lat, lon]

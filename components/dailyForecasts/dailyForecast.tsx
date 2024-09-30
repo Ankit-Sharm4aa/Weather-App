@@ -9,9 +9,9 @@ import getForecastData from "../services/networking/forecast-data";
 import { ForecastApiResponse, listDTO } from "../types/weather/forecast";
 
 type Props = {
-  dt: number;
-  lat: number;
-  lon: number;
+  dt: number | undefined;
+  lat: number | undefined;
+  lon: number | undefined;
 };
 
 function DailyForecast({ dt, lat, lon }: Props) {
@@ -19,22 +19,15 @@ function DailyForecast({ dt, lat, lon }: Props) {
   const date = new Date(dt ? dt * 1000 : 0);
   const formatted_date = date?.toISOString().slice(0, 10);
   const [data, setData] = useState<ForecastApiResponse>();
-  // const [formatted_forecast_data, setForecastData] = useState<listDTO[]>();
-
-  // console.log("data 123", data);
 
   if (data && data?.list && data?.list.length > 0) {
-    // console.log(data?.list);
     formatted_forecast_data = data?.list.filter((list) =>
       list.dt_txt.includes(formatted_date)
     );
-    console.log("formatted_forecast_data", formatted_forecast_data);
   }
-  console.log("formatted_forecast_data", formatted_forecast_data);
   const fetchData = useCallback(
     async (lat: number, lon: number) => {
       const forecastDataFromApi = await getForecastData(lat, lon);
-      // console.log("forecastDataFromApi", forecastDataFromApi);
       setData(forecastDataFromApi);
     },
     [lat, lon]

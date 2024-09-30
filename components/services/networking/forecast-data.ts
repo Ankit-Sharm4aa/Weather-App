@@ -12,7 +12,5 @@ export default async function getForecastData(
   );
   const forecast_data = await response.json();
 
-  console.log(forecast_data, "forecast_data");
-
   return { ...forecast_data };
 }

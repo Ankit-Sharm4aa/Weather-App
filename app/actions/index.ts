@@ -2,10 +2,11 @@
 
 import { signIn, signOut } from "@/auth";
 
-export async function doSocialLogin(formData) {
+export async function doSocialLogin(formData: FormData) {
   const action = formData.get("action");
 
-  await signIn(action, { redirectTo: "/weatherApp/" });
+  if (action && typeof action === "string")
+    await signIn(action, { redirectTo: "/weatherApp/" });
 }
 
 export async function Logout() {

@@ -1,7 +1,6 @@
 import React from "react";
 import { Avatar, IconButton } from "@mui/material";
 import "./navbar.css";
-import profilepic from "./images/alex-suprun-ZHvM3XIOHoE-unsplash.jpg";
 import LogoutForm from "../logoutForm";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";

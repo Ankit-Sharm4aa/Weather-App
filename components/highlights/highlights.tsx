@@ -4,7 +4,6 @@ import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import AtmPressureChart from "../atmPressure-chart/atmPressure-Chart";
 import SunChart from "../sunChart/sunChart";
-import WindCompass from "../windCompass/windCompass";
 import DeviceThermostatOutlinedIcon from "@mui/icons-material/DeviceThermostatOutlined";
 import WaterDropOutlinedIcon from "@mui/icons-material/WaterDropOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
@@ -12,23 +11,20 @@ import Divider from "@mui/material/Divider";
 import { WiSunrise } from "react-icons/wi";
 import { TbSunset2 } from "react-icons/tb";
 import { mainDTO, sysDTO, windDTO } from "../types/weather/weather";
-import Moment from "react-moment";
 import "./highlights.css";
 
 type Props = {
-  main: mainDTO;
-  sys: sysDTO;
-  wind: windDTO;
-  vis: number;
-  dt: number;
-  timezone: number;
+  main: mainDTO | undefined;
+  sys: sysDTO | undefined;
+  wind: windDTO | undefined;
+  vis: number | undefined;
+  dt: number | undefined;
+  timezone: Date | undefined;
 };
 
 function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
-  const windDirection = 180;
   const Humidity = main?.humidity;
   const Feels_like = (main?.feels_like - 273).toFixed(2);
-  const Sunset = new Date(sys?.sunset).toUTCString();
   const Wind_Speed = wind?.speed;
   const Gust_Speed = wind?.gust;
   const Visibility = vis ? vis / 1000 : 0;
@@ -43,10 +39,6 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
       }
       return "" + number;
     }
-
-    let year: number = date.getUTCFullYear();
-    let month: string = pad(date.getUTCMonth() + 1);
-    let day: string = pad(date.getUTCDate());
 
     let hours: number = date.getUTCHours();
     let minutes: string = pad(date.getUTCMinutes());
@@ -71,7 +63,6 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
         <Grid container spacing={1}>
           <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
             <Box className="highlights-wind">
-              {/* <WindCompass direction={windDirection} /> */}
               <h5 className="wind-heading">Wind</h5>
               <Stack direction="column" gap={1}>
                 <div className="windspeed">
