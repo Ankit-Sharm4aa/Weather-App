@@ -1,0 +1,45 @@
+.signin {
+  background-color: black;
+  min-height: 100vh;
+  color: white;
+}
+.signIn-heading {
+  text-align: center;
+  color: yellow;
+  font-size: clamp(2rem, 1rem + 2vw, 2.5rem);
+  font-weight: normal;
+  margin: 1rem 0;
+}
+.signin-icon {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 20px;
+}
+.signInForm-wrapper {
+  padding: 20px;
+}
+.signIn-form {
+  min-height: 27.5rem;
+  max-width: 22rem;
+  background-color: hsl(240, 68%, 5%);
+  padding: 10px;
+  margin: auto;
+  border: 1px solid hsla(60, 100%, 80%, 0.62);
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-height: 42rem) {
+  .signIn-form {
+    min-height: 30rem;
+  }
+  .signIn-heading {
+    margin: 1.5rem 0rem;
+  }
+}
+@media (min-width: 48rem) {
+  .signIn-form {
+    max-width: 28rem;
+  }
+}

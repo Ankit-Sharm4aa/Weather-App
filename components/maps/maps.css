@@ -1,0 +1,21 @@
+.maps-container {
+  height: 100%;
+  background-color: black;
+}
+.map-heading {
+  font-size: 2rem;
+  padding: 2rem 0rem;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: clamp(3rem, 1rem + 4vw, 7rem);
+}
+.map {
+  color: white;
+  max-width: 50rem;
+  min-height: 13rem;
+  width: 100%;
+  border: 2px solid yellow;
+  border-radius: 0.5rem;
+  margin: auto;
+}

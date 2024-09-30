@@ -1,0 +1,31 @@
+.forecast-heading {
+  margin-bottom: 1.2rem;
+  color: white;
+}
+.box-main {
+  height: 18.75rem;
+  padding: 0.4rem;
+  background-color: hsla(240, 65%, 3%, 0.549);
+  border-radius: 1rem;
+  border: 2px solid yellow;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: scroll;
+}
+
+.forecast1-weather-img {
+  height: 3rem;
+  width: 3rem;
+}
+.forecast-1 {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-size: 1rem;
+}
+.forecast1-temp {
+  flex: 5;
+}
+.forecast1-date {
+  flex: 1;
+}

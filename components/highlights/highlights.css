@@ -1,0 +1,136 @@
+.highlights-container {
+  color: white;
+  min-height: 20.6rem;
+  padding: 0.6rem;
+  border-radius: 0.9rem;
+  border: 2px solid yellow;
+  background-color: hsla(240, 65%, 3%, 0.549);
+}
+.highlights-wind,
+.highlights-atmPressure,
+.highlights-sun {
+  padding: 0.6rem;
+  font-weight: bold;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(233, 233, 3, 0.664);
+}
+.highlights-humidity,
+.highlights-visibility,
+.highlights-feelslike {
+  padding: 0.9rem;
+  font-weight: bold;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(233, 233, 3, 0.664);
+}
+
+.highlights-heading {
+  margin-bottom: 0.6rem;
+}
+.highlights-wind {
+  background-color: rgba(0, 0, 0, 0.836);
+  min-height: 11.8rem;
+}
+.wind-heading {
+  margin-bottom: 1.25rem;
+}
+.windspeed,
+.windgust {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.8rem;
+}
+.wind-unit,
+.wind-text {
+  font-size: 0.6rem;
+  margin-top: 4px;
+}
+.highlights-atmPressure {
+  background-color: rgba(0, 0, 0, 0.836);
+  min-height: 11.25rem;
+}
+.atmPressure-chart {
+  display: flex;
+  justify-content: center;
+}
+.atmPressure-indicator {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+.atmPressure-unit-container {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  margin-top: 5px;
+}
+.atmPressure-value {
+  font-size: 26px;
+}
+.atmPressure-unit {
+  font-size: 0.6rem;
+  margin-top: 15px;
+}
+.highlights-sun {
+  background-color: rgba(0, 0, 0, 0.836);
+  min-height: 11.25rem;
+}
+.sun-time-container,
+.sunrise-time-container,
+.sunset-time-container {
+  display: flex;
+}
+.sunrise-time-container,
+.sunset-time-container {
+  gap: 2px;
+}
+.sun-Chart {
+  margin-top: 0.6rem;
+  display: flex;
+  justify-content: center;
+}
+.sun-time-container {
+  justify-content: center;
+  gap: 2.6rem;
+}
+.sunrise-time,
+.sunset-time {
+  font-size: 0.6rem;
+}
+.time-unit {
+  font-size: 0.6rem;
+}
+.highlights-humidity {
+  background-color: rgba(0, 0, 0, 0.836);
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+.humidity-value {
+  font-size: 23px;
+}
+.humidity-percent {
+  font-size: 0.6rem;
+}
+.highlights-visibility {
+  background-color: rgba(0, 0, 0, 0.836);
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+.visibility-value {
+  font-size: 23px;
+}
+.visibility-unit {
+  font-size: 0.6rem;
+  margin-left: 5px;
+}
+.highlights-feelslike {
+  background-color: rgba(0, 0, 0, 0.836);
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+.temperature-value {
+  font-size: 23px;
+  margin-top: -6px;
+}

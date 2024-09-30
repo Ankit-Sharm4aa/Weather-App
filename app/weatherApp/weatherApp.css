@@ -1,0 +1,28 @@
+.weather-app {
+  min-height: 100vh;
+  background-color: rgb(0, 0, 0);
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.459);
+  color: white;
+  padding: 0.5rem;
+}
+/* .Bg-image {
+  background-image: url("./images/valentin-muller-bWtd1ZyEy6w-unsplash.jpg");
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  -webkit-filter: brightness(30%);
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+} */
+.grid-wrapper {
+  display: flex;
+  padding: 1.5rem;
+  width: 100%;
+}
