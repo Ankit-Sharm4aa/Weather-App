@@ -11,6 +11,7 @@ import "./weeklyForecasts.css";
 import getForecastData from "../services/networking/forecast-data";
 import { ForecastApiResponse, listDTO } from "../types/weather/forecast";
 import Grid from "@mui/material/Grid";
+import Image from "next/image";
 
 type Props = {
   dt: number | undefined;
@@ -68,13 +69,16 @@ function WeeklyForecasts({ dt, lat, lon }: Props) {
                 return null;
               }
               return (
-                <ListItem>
+                <ListItem key={index}>
                   <div style={{ display: "flex", flex: 1 }}>
                     <ListItemIcon>
-                      <img
+                      <Image
                         className="weeklyForecast-icon"
                         src={`https://openweathermap.org/img/w/${weekly_forecast_data[index]?.weather[0]?.icon}.png`}
-                      ></img>
+                        alt="Weather Icon"
+                        width={48}
+                        height={48}
+                      ></Image>
                     </ListItemIcon>
                     <Stack direction="column">
                       <div>

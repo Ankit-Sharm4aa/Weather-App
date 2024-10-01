@@ -45,7 +45,7 @@ export type WeatherApiResponse = {
   clouds: cloudsDTO;
   dt: number;
   sys: sysDTO;
-  timezone: Date;
+  timezone: number;
   name: string;
   cod: number;
 };
