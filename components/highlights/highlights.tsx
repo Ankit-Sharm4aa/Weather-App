@@ -59,7 +59,7 @@ function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
   return (
     <>
       <Box className="highlights-container">
-        <h5 className="highlights-heading">Today's Highlights</h5>
+        <h5 className="highlights-heading">Today&apos;s Highlights</h5>
         <Grid container spacing={1}>
           <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
             <Box className="highlights-wind">

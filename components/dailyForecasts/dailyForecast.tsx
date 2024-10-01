@@ -7,6 +7,7 @@ import ListItemText from "@mui/material/ListItemText";
 import "./dailyForecast.css";
 import getForecastData from "../services/networking/forecast-data";
 import { ForecastApiResponse, listDTO } from "../types/weather/forecast";
+import Image from "next/image";
 
 type Props = {
   dt: number | undefined;
@@ -45,12 +46,15 @@ function DailyForecast({ dt, lat, lon }: Props) {
           <List className="forecast-list" disablePadding>
             {formatted_forecast_data?.map((item, i) => {
               return (
-                <ListItem>
+                <ListItem key={i}>
                   <ListItemIcon>
-                    <img
+                    <Image
                       src={`https://openweathermap.org/img/w/${formatted_forecast_data[i]?.weather[0]?.icon}.png`}
                       className="forecast1-weather-img"
-                    ></img>
+                      alt="weather-img"
+                      width={48}
+                      height={48}
+                    ></Image>
                   </ListItemIcon>
                   <ListItemText>
                     <div className="forecast-1">
