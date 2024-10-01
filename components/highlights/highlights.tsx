@@ -19,18 +19,18 @@ type Props = {
   wind: windDTO | undefined;
   vis: number | undefined;
   dt: number | undefined;
-  timezone: Date | undefined;
+  timezone: number | undefined;
 };
 
 function Highlights({ main, sys, wind, vis, dt, timezone }: Props) {
   const Humidity = main?.humidity;
-  const Feels_like = (main?.feels_like - 273).toFixed(2);
+  const Feels_like = ((main?.feels_like ?? 0) - 273).toFixed(2);
   const Wind_Speed = wind?.speed;
   const Gust_Speed = wind?.gust;
   const Visibility = vis ? vis / 1000 : 0;
-  const timezone1 = timezone * 1000;
-  const sunrise: number = sys?.sunrise * 1000 + timezone1;
-  const sunset: number = sys?.sunset * 1000 + timezone1;
+  const timezone1: number = (timezone ?? 0) * 1000;
+  const sunrise: number = (sys?.sunrise ?? 0) * 1000 + timezone1;
+  const sunset: number = (sys?.sunset ?? 0) * 1000 + timezone1;
   function formatTimestampToAMPM(timestamp: number): string {
     let date: Date = new Date(timestamp);
     function pad(number: number): string {

@@ -20,7 +20,7 @@ type Props = {
   main: mainDTO | undefined;
   weather: weatherDTO[] | undefined;
   city: string;
-  timezone: Date | undefined;
+  timezone: number | undefined;
   setcity: Dispatch<SetStateAction<string>>;
 };
 
@@ -38,7 +38,7 @@ function CurrentWeather({ city, main, dt, weather, timezone, setcity }: Props) {
     setFilteredData(filterData.slice(0, 5));
   }, [query]);
 
-  const temprature = (main?.temp - 273.15).toFixed(2);
+  const temprature = ((main?.temp ?? 0) - 273.15).toFixed(2);
   const weather_message = weather ? weather[0].main : "";
   const date = dt ? dt * 1000 : 0;
   const timezone_value = timezone ? timezone * 1000 : 0;

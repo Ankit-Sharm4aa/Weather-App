@@ -9,8 +9,8 @@ import {
 import { sysDTO } from "../types/weather/weather";
 
 type Props = {
-  sys: sysDTO;
-  dt: number;
+  sys: sysDTO | undefined;
+  dt: number | undefined;
 };
 
 function GaugePointer() {
@@ -37,12 +37,12 @@ function GaugePointer() {
   );
 }
 function SunChart({ sys, dt }: Props) {
-  const sunrise = sys?.sunrise * 1000;
-  const sunset = sys?.sunset * 1000;
+  const sunrise = (sys?.sunrise ?? 0) * 1000;
+  const sunset = (sys?.sunset ?? 0) * 1000;
   const difference = sunset - sunrise;
   const hourly_difference = Math.floor(difference / 1000 / 60 / 60);
   const time_elapsed = Math.min(
-    Math.floor((dt * 1000 - sunrise) / 1000 / 60 / 60),
+    Math.floor(((dt ?? 0) * 1000 - sunrise) / 1000 / 60 / 60),
     hourly_difference
   );
   return (

@@ -53,7 +53,7 @@ function WeeklyForecasts({ dt, lat, lon }: Props) {
   );
 
   useEffect(() => {
-    fetchData(lat, lon);
+    fetchData(lat ?? 0, lon ?? 0);
   }, [lat, lon, fetchData]);
 
   return (

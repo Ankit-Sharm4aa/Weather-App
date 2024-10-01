@@ -4,7 +4,7 @@ import { mainDTO } from "../types/weather/weather";
 import { GaugeContainer, GaugeValueArc } from "@mui/x-charts/Gauge";
 
 type Props = {
-  main: mainDTO;
+  main: mainDTO | undefined;
 };
 
 function AtmPressureChart({ main }: Props) {
