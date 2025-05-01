@@ -118,7 +118,7 @@ function CurrentWeather({ city, main, dt, weather, timezone, setcity }: Props) {
         </div>
         {weather && (
           <img
-            src={`http://openweathermap.org/img/w/${weather[0]?.icon}.png`}
+            src={`https://openweathermap.org/img/w/${weather[0]?.icon}.png`}
             className="current-weather-img"
           ></img>
         )}
